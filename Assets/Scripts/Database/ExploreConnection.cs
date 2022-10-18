@@ -1,18 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class ExploreConnection : MonoBehaviour
 {
 
     public GameObject ConnError;
-    public TextMeshProUGUI ExploreText;
+    public GameObject ExploreText;
+
+    private bool isLoading = true;
+    public GameObject SpinImg;
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(Spinner());
         StartCoroutine(ConnectionTest());
     }
 
@@ -23,11 +29,40 @@ public class ExploreConnection : MonoBehaviour
 
         if(request.error != null)
         {
+            SpinImg.SetActive(false);
+            isLoading = false;
+            
+
             ConnError.SetActive(true);
+            
         }
         else
         {
-            ExploreText.text = " ";
+            SpinImg.SetActive(false);
+            isLoading = false;
+
+
+            ExploreText.SetActive(true);
+        }
+    }
+
+    public void tryConnection()
+    {
+        isLoading = true;
+        SpinImg.SetActive(true);
+        StartCoroutine(Spinner());
+
+
+        ConnError.SetActive(false);
+        StartCoroutine(ConnectionTest());
+    }
+
+    private IEnumerator Spinner()
+    {
+        while(isLoading)
+        {
+            SpinImg.transform.Rotate(0, 0, -2);
+            yield return null;
         }
     }
 }

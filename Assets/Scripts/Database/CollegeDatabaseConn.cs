@@ -14,7 +14,6 @@ using UnityEngine.UI;
 public class CollegeDatabaseConn : MonoBehaviour
 {
     private DatabaseReference dbReference;
-    //private StorageReference stReference;
 
     public TextMeshProUGUI CollegeNameText;
     public GameObject ConnError;
@@ -23,8 +22,12 @@ public class CollegeDatabaseConn : MonoBehaviour
     public GameObject BoxContainer;
     private RawImage RwImage;
 
+    private bool isLoading = true;
+    public GameObject SpinImg;
+
     private void Start()
     {
+        StartCoroutine(Spinner());
         StartCoroutine(StartConnectionTest());
     }
 
@@ -35,18 +38,23 @@ public class CollegeDatabaseConn : MonoBehaviour
 
         if (request.error != null)
         {
+            SpinImg.SetActive(false);
+            isLoading = false;
             ScrollArea.SetActive(false);
             ConnError.SetActive(true);
         }
         else
         {
             dbReference = FirebaseDatabase.DefaultInstance.RootReference;
-            //stReference = FirebaseStorage.DefaultInstance.RootReference;
             GetCollegeInfo();
+
+            SpinImg.SetActive(false);
+            isLoading = false;
+            ScrollArea.SetActive(true);
         }
     }
 
-    public IEnumerator GetCollegeName(Action<Dictionary<string, object>> onCallback)
+    public IEnumerator GetColleges(Action<Dictionary<string, object>> onCallback)
     {
         var collegeData = dbReference.Child("Colleges").GetValueAsync();
         Dictionary<string, object> College = new Dictionary<string, object>();
@@ -68,7 +76,8 @@ public class CollegeDatabaseConn : MonoBehaviour
 
         if (www.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log(www.error);
+            ScrollArea.SetActive(false);
+            ConnError.SetActive(true);
         }
         else
         {
@@ -78,7 +87,7 @@ public class CollegeDatabaseConn : MonoBehaviour
 
     public void GetCollegeInfo()
     {
-        StartCoroutine(GetCollegeName((Dictionary<string, object> Colleges) =>
+        StartCoroutine(GetColleges((Dictionary<string, object> Colleges) =>
         {
             foreach(var college in Colleges)
             {
@@ -103,6 +112,26 @@ public class CollegeDatabaseConn : MonoBehaviour
 
             }
         }));
+    }
+
+    public void tryConnection()
+    {
+        isLoading = true;
+        SpinImg.SetActive(true);
+        StartCoroutine(Spinner());
+
+
+        ConnError.SetActive(false);
+        StartCoroutine(StartConnectionTest());
+    }
+
+    private IEnumerator Spinner()
+    {
+        while (isLoading)
+        {
+            SpinImg.transform.Rotate(0, 0, -2f);
+            yield return null;
+        }
     }
 }
 
