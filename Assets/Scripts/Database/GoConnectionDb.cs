@@ -3,8 +3,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GoConnectionDb : MonoBehaviour
@@ -21,6 +23,9 @@ public class GoConnectionDb : MonoBehaviour
     private bool isLoading = true;
     public GameObject SpinImg;
 
+    public string BuildKey;
+    GameObject recentCanvas;
+    List<GameObject> CanvasList = new List<GameObject>(); 
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +80,12 @@ public class GoConnectionDb : MonoBehaviour
             {
                 var buildingDes = building.Value as Dictionary<string, object>;
                 GameObject buildingBox = Instantiate(BuildingBox, BoxContainer.transform);
-                
+                Button boxBtn = buildingBox.GetComponent<Button>();
+
+                boxBtn.onClick.AddListener(() =>
+                {
+                    onDataClick(building.Key);
+                });
 
                 foreach (var description in buildingDes)
                 {
@@ -137,5 +147,16 @@ public class GoConnectionDb : MonoBehaviour
 
         ConnError.SetActive(false);
         StartCoroutine(StartConnectionTest());
+    }
+
+    private void onDataClick(string Key)
+    {
+        if(Key != null)
+        {
+            BuildKey = Key;
+            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(GameObject.Find("GoCanvas"));
+            SceneManager.LoadScene("DescriptionScene");
+        }
     }
 }
