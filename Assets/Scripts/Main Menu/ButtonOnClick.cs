@@ -11,8 +11,7 @@ public class ButtonOnClick : MonoBehaviour
 
     public void OnArClick()
     {
-        Image Graphic = buttonImage.GetComponent<Image>();
-        Graphic.color = Color.black;
+        SceneManager.LoadScene("ArScene");
     }
 
     public void OnExploreClick()
