@@ -1,20 +1,13 @@
-using Firebase.Database;
-using Firebase.Extensions;
-using Firebase.Storage;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CollegeDatabaseConn : MonoBehaviour
 {
-    private DatabaseReference dbReference;
-
     public TextMeshProUGUI CollegeNameText;
     public GameObject ConnError;
     public GameObject ScrollArea;
@@ -27,102 +20,49 @@ public class CollegeDatabaseConn : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(Spinner());
-        StartCoroutine(StartConnectionTest());
-    }
-
-    IEnumerator StartConnectionTest()
-    {
-        UnityWebRequest request = new UnityWebRequest("http://google.com");
-        yield return request.SendWebRequest();
-
-        if (request.error != null)
+        if (GameObject.FindGameObjectWithTag("LoadedData") != null)
         {
-            SpinImg.SetActive(false);
-            isLoading = false;
-            ScrollArea.SetActive(false);
-            ConnError.SetActive(true);
+            var Colleges = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Colleges;
+            var CollegeLogos = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().CollegeLogos;
+            StartCoroutine(Spinner());
+            StartCoroutine(DisplayColleges(Colleges, CollegeLogos));
         }
         else
         {
-            dbReference = FirebaseDatabase.DefaultInstance.RootReference;
-            GetCollegeInfo();
-
-            SpinImg.SetActive(false);
-            isLoading = false;
-            ScrollArea.SetActive(true);
+            SceneManager.LoadScene("LoadingScene");
         }
     }
 
-    public IEnumerator GetColleges(Action<Dictionary<string, object>> onCallback)
+
+    public IEnumerator DisplayColleges(Dictionary<string, object> CollegeInfo, Dictionary<string, Texture> CollegeLogos)
     {
-        var collegeData = dbReference.Child("Colleges").GetValueAsync();
-        Dictionary<string, object> College = new Dictionary<string, object>();
-        yield return new WaitUntil(predicate: () => collegeData.IsCompleted);
-
-        if (collegeData != null)
+        foreach (var college in CollegeInfo)
         {
-            DataSnapshot snapshot = collegeData.Result;
-            var colleges = snapshot.Value as Dictionary<string, object>;
-            College = colleges;
-            onCallback.Invoke(College);
-        }
-    }
-
-    public IEnumerator LoadImage(string url, RawImage DisplayImage)
-    {
-        UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
-        yield return www.SendWebRequest();
-
-        if (www.result != UnityWebRequest.Result.Success)
-        {
-            ScrollArea.SetActive(false);
-            ConnError.SetActive(true);
-        }
-        else
-        {
-            DisplayImage.texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
-        }
-    }
-
-    public void GetCollegeInfo()
-    {
-        StartCoroutine(GetColleges((Dictionary<string, object> Colleges) =>
-        {
-            foreach(var college in Colleges)
+            var collegeDes = college.Value as Dictionary<string, object>;
+            GameObject collegeBox = Instantiate(CollegeBox, BoxContainer.transform);
+            var collegeNameText = collegeBox.transform.Find("College_Name");
+            if (CollegeLogos.ContainsKey(college.Key))
             {
-                var collegeDes = college.Value as Dictionary<string, object>;
-                GameObject collegeBox = Instantiate(CollegeBox, BoxContainer.transform);
-                var collegeNameText = collegeBox.transform.Find("College_Name");
-                
-
-                foreach (var description in collegeDes)
-                {
-                    if (description.Key == "logo")
-                    {
-                        var collegeLogo = collegeBox.transform.Find("Logo");
-                        RwImage = collegeLogo.GetComponent<RawImage>();
-                        StartCoroutine(LoadImage(description.Value.ToString(), RwImage));
-                    }
-                    else if (description.Key == "name")
-                    {
-                        collegeNameText.GetComponent<TextMeshProUGUI>().text = description.Value.ToString();
-                    }
-                }
-
+                var collegeLogo = collegeBox.transform.Find("Logo");
+                RwImage = collegeLogo.GetComponent<RawImage>();
+                RwImage.texture = CollegeLogos[college.Key];
             }
-        }));
-    }
+            foreach (var description in collegeDes)
+            {
+                if (description.Key == "name")
+                {
+                    collegeNameText.GetComponent<TextMeshProUGUI>().text = description.Value.ToString();
+                }
+            }
+            if(CollegeInfo.Last().Key == college.Key)
+            {
+                SpinImg.SetActive(false);
+                isLoading = false;
+                ScrollArea.SetActive(true);
+            }
+        }
 
-    public void tryConnection()
-    {
-        isLoading = true;
-        SpinImg.SetActive(true);
-        StartCoroutine(Spinner());
-
-
-        ConnError.SetActive(false);
-        StartCoroutine(StartConnectionTest());
+        yield return true;
     }
 
     private IEnumerator Spinner()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ExploreConnection : MonoBehaviour
@@ -18,8 +19,19 @@ public class ExploreConnection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Spinner());
-        StartCoroutine(ConnectionTest());
+        if (GameObject.FindGameObjectWithTag("LoadedData") != null)
+        {
+            var Colleges = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Colleges;
+            var Staffs = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Staffs;
+
+            Debug.Log(Staffs.Count);
+            StartCoroutine(Spinner());
+            StartCoroutine(ConnectionTest());
+        }
+        else
+        {
+            SceneManager.LoadScene("LoadingScene");
+        }
     }
 
     IEnumerator ConnectionTest()

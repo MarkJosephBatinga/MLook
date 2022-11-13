@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
-  <Tracking>
-    <ImageTarget name="oldadmin" size="6.000000 3.974026" />
-    <ImageTarget name="cit" size="6.000000 4.500000" />
-    <ImageTarget name="cas_build" size="6.000000 8.000000" />
-    <ImageTarget name="admin_build" size="6.000000 3.974026" />
-  </Tracking>
-</QCARConfig>
