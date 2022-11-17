@@ -21,10 +21,6 @@ public class ExploreConnection : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("LoadedData") != null)
         {
-            var Colleges = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Colleges;
-            var Staffs = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Staffs;
-
-            Debug.Log(Staffs.Count);
             StartCoroutine(Spinner());
             StartCoroutine(ConnectionTest());
         }
@@ -56,17 +52,6 @@ public class ExploreConnection : MonoBehaviour
 
             ExploreText.SetActive(true);
         }
-    }
-
-    public void tryConnection()
-    {
-        isLoading = true;
-        SpinImg.SetActive(true);
-        StartCoroutine(Spinner());
-
-
-        ConnError.SetActive(false);
-        StartCoroutine(ConnectionTest());
     }
 
     private IEnumerator Spinner()

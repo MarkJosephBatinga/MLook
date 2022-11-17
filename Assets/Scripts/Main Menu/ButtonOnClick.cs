@@ -33,4 +33,9 @@ public class ButtonOnClick : MonoBehaviour
     {
         SceneManager.LoadScene("AboutScene");
     }
+
+    public void OnSearchClick()
+    {
+        SceneManager.LoadScene("SearchScene");
+    }
 }

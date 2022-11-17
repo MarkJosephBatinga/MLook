@@ -18,29 +18,23 @@ public class LoadData : MonoBehaviour
 
     public GameObject SpinImg;
     public GameObject LoadStat;
+    public GameObject LoadNum;
     public GameObject ConnError;
     public GameObject LoadBox;
     public GameObject LoadedData;
 
     private bool isLoading = true;
-    private bool loadEnded;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Spinner());
-        StartCoroutine(StartConnectionTest((bool loadBool) =>
-        {
-           if(loadBool)
-            {
-                LoadStat.GetComponent<TextMeshProUGUI>().text = "Load Complete";
-            }
-        }));
+        StartCoroutine(StartConnectionTest());
     }
 
 
     //Check if there is an internet connection
-    IEnumerator StartConnectionTest(Action<bool> onCallback)
+    IEnumerator StartConnectionTest()
     {
         UnityWebRequest request = new UnityWebRequest("http://google.com");
         yield return request.SendWebRequest();
@@ -59,16 +53,18 @@ public class LoadData : MonoBehaviour
             {
                 var DataBox = GameObject.Instantiate(LoadedData);
                 DataBox.GetComponent<Data>().Colleges = colleges;
-                GetCollegeLogo(DataBox);
+                StartCoroutine(GetCollegeLogo(DataBox));
             }));
         }
-        onCallback.Invoke(true);
+
+        yield return null;
     }
 
     //Get all college data in the database and store to a dictionary
     public IEnumerator GetColleges(Action<Dictionary<string, object>> onCallback)
     {
         LoadStat.GetComponent<TextMeshProUGUI>().text = "Loading Colleges";
+        LoadNum.GetComponent<TextMeshProUGUI>().text = "";
         var collegeData = dbReference.Child("Colleges").GetValueAsync();
         yield return new WaitUntil(predicate: () => collegeData.IsCompleted);
 
@@ -82,21 +78,33 @@ public class LoadData : MonoBehaviour
     }
 
     //Iterate to each college logo url to download the image 
-    public void GetCollegeLogo(GameObject LoadedCollege)
+    public IEnumerator GetCollegeLogo(GameObject LoadedCollege)
     {
         LoadStat.GetComponent<TextMeshProUGUI>().text = "Loading College Logos";
         var collegesLoaded = LoadedCollege.GetComponent<Data>().Colleges;
         foreach (var college in collegesLoaded)
         {
-            var collegeDes = college.Value as Dictionary<string, object>;
-            foreach (var description in collegeDes)
+            UnityWebRequest request = new UnityWebRequest("http://google.com");
+            yield return request.SendWebRequest();
+
+            if (request.error != null)
             {
-                if (description.Key == "logo")
+                StopAllCoroutines();
+                GameObject.Destroy(GameObject.FindGameObjectWithTag("LoadedData"));
+                LoadBox.SetActive(false);
+                ConnError.SetActive(true);
+            }
+            else
+            {
+                var collegeDes = college.Value as Dictionary<string, object>;
+                foreach (var description in collegeDes)
                 {
-                    StartCoroutine(LoadLogo(description.Value.ToString(), LoadedCollege, college.Key));
+                    if (description.Key == "logo")
+                    {
+                        StartCoroutine(LoadLogo(description.Value.ToString(), LoadedCollege, college.Key));
+                    }
                 }
             }
-
         }
     }
 
@@ -116,7 +124,8 @@ public class LoadData : MonoBehaviour
             var DataScriptLogo = LoadedCollege.GetComponent<Data>().CollegeLogos;
             var DataScript = LoadedCollege.GetComponent<Data>().Colleges;
             DataScriptLogo.Add(Key, ((DownloadHandlerTexture)www.downloadHandler).texture);
-            if(DataScript.Count == DataScriptLogo.Count)
+            LoadNum.GetComponent<TextMeshProUGUI>().text = DataScriptLogo.Count + "/" + DataScript.Count;
+            if (DataScript.Count == DataScriptLogo.Count)
             {
                 CollegeLoaded(LoadedCollege);
             }
@@ -139,6 +148,7 @@ public class LoadData : MonoBehaviour
     public IEnumerator GetBuildings(Action<Dictionary<string, object>> onCallback)
     {
         LoadStat.GetComponent<TextMeshProUGUI>().text = "Loading Buildings";
+        LoadNum.GetComponent<TextMeshProUGUI>().text = "";
         var buildingData = dbReference.Child("Buildings").GetValueAsync();
         yield return new WaitUntil(predicate: () => buildingData.IsCompleted);
 
@@ -163,12 +173,7 @@ public class LoadData : MonoBehaviour
             {
                 if (description.Key == "image")
                 {
-                    var images = description.Value as Dictionary<string, object>;
-                    foreach (var image in images)
-                    {
-                        var ImageKey = building.Key + "_" + image.Key;
-                        StartCoroutine(LoadImage(image.Value.ToString(), LoadedBuildings, ImageKey));
-                    }
+                    StartCoroutine(LoadImage(description.Value.ToString(), LoadedBuildings, building.Key));
                 }
             }
 
@@ -193,10 +198,9 @@ public class LoadData : MonoBehaviour
             var DataScriptImages = LoadedData.GetComponent<Data>().BuildingImages;
             var DataScript = LoadedData.GetComponent<Data>().Buildings;
             DataScriptImages.Add(Key, ((DownloadHandlerTexture)www.downloadHandler).texture);
-            Debug.Log(DataScriptImages.Count);
-            if (DataScript.Count * 3 - 1 == DataScriptImages.Count)
+            LoadNum.GetComponent<TextMeshProUGUI>().text = DataScriptImages.Count + "/" + DataScript.Count;
+            if (DataScript.Count == DataScriptImages.Count)
             {
-                Debug.Log(DataScriptImages.Count);
                 BuildingLoaded(LoadedData);
             }
         }
@@ -209,7 +213,9 @@ public class LoadData : MonoBehaviour
         LoadStat.GetComponent<TextMeshProUGUI>().text = "Building Images Retrieved";
         StartCoroutine(GetStaffs((Dictionary<string, object> staffs) =>
         {
+            LoadNum.GetComponent<TextMeshProUGUI>().text = "";
             DataLoaded.GetComponent<Data>().Staffs = staffs;
+            LoadNum.GetComponent<TextMeshProUGUI>().text = "Load Complete";
             GameObject.DontDestroyOnLoad(DataLoaded);
             SceneManager.LoadScene("ExploreScene");
         }));
@@ -219,6 +225,7 @@ public class LoadData : MonoBehaviour
     public IEnumerator GetStaffs(Action<Dictionary<string, object>> onCallback)
     {
         LoadStat.GetComponent<TextMeshProUGUI>().text = "Loading Staffs";
+        LoadNum.GetComponent<TextMeshProUGUI>().text = "";
         var staffData = dbReference.Child("Staffs").GetValueAsync();
         yield return new WaitUntil(predicate: () => staffData.IsCompleted);
 
@@ -237,11 +244,7 @@ public class LoadData : MonoBehaviour
         LoadBox.SetActive(true);
         ConnError.SetActive(false);
 
-        StartCoroutine(StartConnectionTest((bool loadBool) =>
-        {
-            loadEnded = loadBool;
-            Debug.Log(loadEnded);
-        }));
+        StartCoroutine(StartConnectionTest());
     }
 
 

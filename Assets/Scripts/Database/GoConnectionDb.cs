@@ -50,11 +50,11 @@ public class GoConnectionDb : MonoBehaviour
             var buildingDes = building.Value as Dictionary<string, object>;
             GameObject buildingBox = Instantiate(BuildingBox, BoxContainer.transform);
             Button boxBtn = buildingBox.GetComponent<Button>();
-            if (BuildingImages.ContainsKey(building.Key + "_main"))
+            if (BuildingImages.ContainsKey(building.Key))
             {
                 var buildingMainImg = buildingBox.transform.Find("Build_Img");
                 RwImage = buildingMainImg.GetComponent<RawImage>();
-                RwImage.texture = BuildingImages[building.Key + "_main"];
+                RwImage.texture = BuildingImages[building.Key];
             }
 
             foreach (var description in buildingDes)
