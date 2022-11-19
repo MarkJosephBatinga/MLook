@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="COTShop4" size="200.000000 196.547577" />
+    <ImageTarget name="COTShop3" size="200.000000 261.592682" />
+    <ImageTarget name="COTShop2" size="200.000000 272.757660" />
+    <ImageTarget name="COTShop" size="200.000000 132.467529" />
+  </Tracking>
+</QCARConfig>
