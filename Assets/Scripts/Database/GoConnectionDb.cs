@@ -95,10 +95,9 @@ public class GoConnectionDb : MonoBehaviour
     {
         if(Key != null)
         {
-            BuildKey = Key;
-            DontDestroyOnLoad(gameObject);
-            DontDestroyOnLoad(GameObject.Find("GoCanvas"));
-            SceneManager.LoadScene("DescriptionScene");
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().BuildingKey = Key;
+
+            SceneManager.LoadScene("BuildingDescriptionScene");
         }
     }
 }

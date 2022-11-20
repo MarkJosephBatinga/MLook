@@ -13,6 +13,11 @@ public class Data : MonoBehaviour
     public Dictionary<string, Texture> BuildingImages = new Dictionary<string, Texture>();
 
     public Dictionary<string, object> Staffs = new Dictionary<string, object>();
-    
-    // Start is called before the first frame update
+
+
+    //Session data
+    public string BuildingKey;
+
+
+    public string CollegeKey;
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -40,6 +41,7 @@ public class CollegeDatabaseConn : MonoBehaviour
         {
             var collegeDes = college.Value as Dictionary<string, object>;
             GameObject collegeBox = Instantiate(CollegeBox, BoxContainer.transform);
+            GameObject DescripBtn = collegeBox.transform.Find("Des_Button").GameObject(); 
             var collegeNameText = collegeBox.transform.Find("College_Name");
             if (CollegeLogos.ContainsKey(college.Key))
             {
@@ -60,9 +62,31 @@ public class CollegeDatabaseConn : MonoBehaviour
                 isLoading = false;
                 ScrollArea.SetActive(true);
             }
+
+
+            if (DescripBtn != null)
+            {
+                Button DBtn = DescripBtn.GetComponent<Button>();
+                DBtn.onClick.AddListener(() =>
+                {
+                    OnDataClick(college.Key);
+                });
+            }
+
         }
 
         yield return true;
+    }
+
+
+    private void OnDataClick(string Key)
+    {
+        if (Key != null)
+        {
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().CollegeKey = Key;
+
+            SceneManager.LoadScene("CollegeDescriptionScene");
+        }
     }
 
     private IEnumerator Spinner()

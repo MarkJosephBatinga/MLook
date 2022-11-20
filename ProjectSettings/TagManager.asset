@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LoadedData
   - SearchData
+  - ARBuildingPrefab
+  - ARCollegePrefab
   layers:
   - Default
   - TransparentFX

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 15811963}
   - component: {fileID: 15811966}
   - component: {fileID: 15811965}
-  - component: {fileID: 15811964}
+  - component: {fileID: 15811967}
   m_Layer: 0
   m_Name: COTShop4
   m_TagString: Untagged
@@ -157,25 +157,6 @@ Transform:
   m_Father: {fileID: 249335876}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &15811964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15811962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 15811966}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTShop4
-  mDatasetName: Vuforia/COTShopDB.xml
-  mCastedBehaviour: {fileID: 15811966}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &15811965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,10 +197,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 249335877}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 249335877}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &15811966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +250,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 15811964}
+  mPreview: {fileID: 15811967}
+--- !u!114 &15811967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15811962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 15811966}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTShop4
+  mDatasetName: Vuforia/COTShopDB.xml
+  mCastedBehaviour: {fileID: 15811966}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &35898333
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +322,7 @@ GameObject:
   - component: {fileID: 98382640}
   - component: {fileID: 98382643}
   - component: {fileID: 98382642}
-  - component: {fileID: 98382641}
+  - component: {fileID: 98382644}
   m_Layer: 0
   m_Name: Admin3
   m_TagString: Untagged
@@ -321,25 +345,6 @@ Transform:
   m_Father: {fileID: 1410066276}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &98382641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98382639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 98382643}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: admintrack3
-  mDatasetName: Vuforia/AdminDb.xml
-  mCastedBehaviour: {fileID: 98382643}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &98382642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,10 +385,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410066277}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410066277}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &98382643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +438,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 98382641}
+  mPreview: {fileID: 98382644}
+--- !u!114 &98382644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98382639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 98382643}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: admintrack3
+  mDatasetName: Vuforia/AdminDb.xml
+  mCastedBehaviour: {fileID: 98382643}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &168034260
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168034261}
+  - component: {fileID: 168034262}
   m_Layer: 0
   m_Name: COTGirlsTrade
   m_TagString: Untagged
@@ -443,6 +492,21 @@ Transform:
   m_Father: {fileID: 35898334}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &168034262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168034260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd11ee553e5f234f94b767ad724f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollegePrefab: {fileID: 0}
+  BuildingPrefab: {fileID: 0}
+  DMMMMSUMap: {fileID: 0}
 --- !u!1 &168951666
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168951667}
+  - component: {fileID: 168951669}
   m_Layer: 0
   m_Name: COTMainBuilding
   m_TagString: Untagged
@@ -479,6 +544,23 @@ Transform:
   m_Father: {fileID: 35898334}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &168951669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168951666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd11ee553e5f234f94b767ad724f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollegePrefab: {fileID: 5849434375041851420, guid: 0bd95b43c3568a94282d1128ceac5502,
+    type: 3}
+  BuildingPrefab: {fileID: 4715036304408825465, guid: 8397d7909ab2af64ca68e621df12ebef,
+    type: 3}
+  DMMMMSUMap: {fileID: 209792240}
 --- !u!1 &171903920
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +572,7 @@ GameObject:
   - component: {fileID: 171903921}
   - component: {fileID: 171903924}
   - component: {fileID: 171903923}
-  - component: {fileID: 171903922}
+  - component: {fileID: 171903925}
   m_Layer: 0
   m_Name: COTShop
   m_TagString: Untagged
@@ -513,25 +595,6 @@ Transform:
   m_Father: {fileID: 249335876}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &171903922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171903920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 171903924}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTShop2
-  mDatasetName: Vuforia/COTShopDB.xml
-  mCastedBehaviour: {fileID: 171903924}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &171903923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,10 +635,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 249335877}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 249335877}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &171903924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +688,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 171903922}
+  mPreview: {fileID: 171903925}
+--- !u!114 &171903925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171903920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 171903924}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTShop2
+  mDatasetName: Vuforia/COTShopDB.xml
+  mCastedBehaviour: {fileID: 171903924}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &173563490
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +719,7 @@ GameObject:
   - component: {fileID: 173563491}
   - component: {fileID: 173563494}
   - component: {fileID: 173563493}
-  - component: {fileID: 173563492}
+  - component: {fileID: 173563495}
   m_Layer: 0
   m_Name: COTMetal
   m_TagString: Untagged
@@ -636,25 +742,6 @@ Transform:
   m_Father: {fileID: 358639689}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &173563492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173563490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 173563494}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMetals
-  mDatasetName: Vuforia/COTMetalsShop.xml
-  mCastedBehaviour: {fileID: 173563494}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &173563493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,10 +782,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 358639690}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 358639690}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &173563494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,7 +835,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 173563492}
+  mPreview: {fileID: 173563495}
+--- !u!114 &173563495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173563490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 173563494}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMetals
+  mDatasetName: Vuforia/COTMetalsShop.xml
+  mCastedBehaviour: {fileID: 173563494}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &196285480
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 196285481}
+  - component: {fileID: 196285482}
   m_Layer: 0
   m_Name: COTElectrical
   m_TagString: Untagged
@@ -760,6 +891,23 @@ Transform:
   m_Father: {fileID: 35898334}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &196285482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196285480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd11ee553e5f234f94b767ad724f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollegePrefab: {fileID: 5849434375041851420, guid: 0bd95b43c3568a94282d1128ceac5502,
+    type: 3}
+  BuildingPrefab: {fileID: 4715036304408825465, guid: 8397d7909ab2af64ca68e621df12ebef,
+    type: 3}
+  DMMMMSUMap: {fileID: 209792240}
 --- !u!1 &209792240
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +1001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249335876}
+  - component: {fileID: 249335877}
   m_Layer: 0
   m_Name: COTShop
   m_TagString: Untagged
@@ -879,6 +1028,23 @@ Transform:
   m_Father: {fileID: 35898334}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249335877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249335875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd11ee553e5f234f94b767ad724f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollegePrefab: {fileID: 5849434375041851420, guid: 0bd95b43c3568a94282d1128ceac5502,
+    type: 3}
+  BuildingPrefab: {fileID: 4715036304408825465, guid: 8397d7909ab2af64ca68e621df12ebef,
+    type: 3}
+  DMMMMSUMap: {fileID: 209792240}
 --- !u!1 &358639688
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +1054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358639689}
+  - component: {fileID: 358639690}
   m_Layer: 0
   m_Name: COTMetals
   m_TagString: Untagged
@@ -915,6 +1082,23 @@ Transform:
   m_Father: {fileID: 35898334}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358639690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358639688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd11ee553e5f234f94b767ad724f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollegePrefab: {fileID: 5849434375041851420, guid: 0bd95b43c3568a94282d1128ceac5502,
+    type: 3}
+  BuildingPrefab: {fileID: 4715036304408825465, guid: 8397d7909ab2af64ca68e621df12ebef,
+    type: 3}
+  DMMMMSUMap: {fileID: 209792240}
 --- !u!1 &370137890
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +1110,7 @@ GameObject:
   - component: {fileID: 370137891}
   - component: {fileID: 370137894}
   - component: {fileID: 370137893}
-  - component: {fileID: 370137892}
+  - component: {fileID: 370137895}
   m_Layer: 0
   m_Name: Admin4
   m_TagString: Untagged
@@ -949,25 +1133,6 @@ Transform:
   m_Father: {fileID: 1410066276}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &370137892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370137890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 370137894}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: admintrack4
-  mDatasetName: Vuforia/AdminDb.xml
-  mCastedBehaviour: {fileID: 370137894}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &370137893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,10 +1173,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410066277}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410066277}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &370137894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,7 +1226,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 370137892}
+  mPreview: {fileID: 370137895}
+--- !u!114 &370137895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370137890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 370137894}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: admintrack4
+  mDatasetName: Vuforia/AdminDb.xml
+  mCastedBehaviour: {fileID: 370137894}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &428466639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1257,7 @@ GameObject:
   - component: {fileID: 428466640}
   - component: {fileID: 428466643}
   - component: {fileID: 428466642}
-  - component: {fileID: 428466641}
+  - component: {fileID: 428466644}
   m_Layer: 0
   m_Name: COTElectric4
   m_TagString: Untagged
@@ -1072,25 +1280,6 @@ Transform:
   m_Father: {fileID: 196285481}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &428466641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428466639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 428466643}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTElectricShop4
-  mDatasetName: Vuforia/COTElectricShop.xml
-  mCastedBehaviour: {fileID: 428466643}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &428466642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,10 +1320,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196285482}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196285482}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &428466643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1160,7 +1373,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 428466641}
+  mPreview: {fileID: 428466644}
+--- !u!114 &428466644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428466639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 428466643}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTElectricShop4
+  mDatasetName: Vuforia/COTElectricShop.xml
+  mCastedBehaviour: {fileID: 428466643}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &448845923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1404,7 @@ GameObject:
   - component: {fileID: 448845924}
   - component: {fileID: 448845927}
   - component: {fileID: 448845926}
-  - component: {fileID: 448845925}
+  - component: {fileID: 448845928}
   m_Layer: 0
   m_Name: COTShop3
   m_TagString: Untagged
@@ -1195,25 +1427,6 @@ Transform:
   m_Father: {fileID: 249335876}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &448845925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448845923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 448845927}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTShop3
-  mDatasetName: Vuforia/COTShopDB.xml
-  mCastedBehaviour: {fileID: 448845927}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &448845926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,10 +1467,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 249335877}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 249335877}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &448845927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,7 +1520,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 448845925}
+  mPreview: {fileID: 448845928}
+--- !u!114 &448845928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448845923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 448845927}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTShop3
+  mDatasetName: Vuforia/COTShopDB.xml
+  mCastedBehaviour: {fileID: 448845927}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &473111186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,7 +1551,7 @@ GameObject:
   - component: {fileID: 473111187}
   - component: {fileID: 473111190}
   - component: {fileID: 473111189}
-  - component: {fileID: 473111188}
+  - component: {fileID: 473111191}
   m_Layer: 0
   m_Name: COTMain3
   m_TagString: Untagged
@@ -1318,25 +1574,6 @@ Transform:
   m_Father: {fileID: 168951667}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &473111188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473111186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 473111190}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMain3
-  mDatasetName: Vuforia/COTMain.xml
-  mCastedBehaviour: {fileID: 473111190}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &473111189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1377,10 +1614,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168951669}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onCollegeFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168951669}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &473111190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1406,7 +1667,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 473111188}
+  mPreview: {fileID: 473111191}
+--- !u!114 &473111191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473111186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 473111190}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMain3
+  mDatasetName: Vuforia/COTMain.xml
+  mCastedBehaviour: {fileID: 473111190}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &517711224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 517711225}
+  - component: {fileID: 517711227}
   m_Layer: 0
   m_Name: COTMachine
   m_TagString: Untagged
@@ -1441,6 +1722,23 @@ Transform:
   m_Father: {fileID: 35898334}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &517711227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517711224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd11ee553e5f234f94b767ad724f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollegePrefab: {fileID: 5849434375041851420, guid: 0bd95b43c3568a94282d1128ceac5502,
+    type: 3}
+  BuildingPrefab: {fileID: 4715036304408825465, guid: 8397d7909ab2af64ca68e621df12ebef,
+    type: 3}
+  DMMMMSUMap: {fileID: 209792240}
 --- !u!1 &552004237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1750,7 @@ GameObject:
   - component: {fileID: 552004238}
   - component: {fileID: 552004241}
   - component: {fileID: 552004240}
-  - component: {fileID: 552004239}
+  - component: {fileID: 552004242}
   m_Layer: 0
   m_Name: COTElectric2
   m_TagString: Untagged
@@ -1475,25 +1773,6 @@ Transform:
   m_Father: {fileID: 196285481}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &552004239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552004237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 552004241}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTElectricShop2
-  mDatasetName: Vuforia/COTElectricShop.xml
-  mCastedBehaviour: {fileID: 552004241}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &552004240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1534,10 +1813,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196285482}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196285482}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &552004241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1563,7 +1866,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 552004239}
+  mPreview: {fileID: 552004242}
+--- !u!114 &552004242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552004237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 552004241}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTElectricShop2
+  mDatasetName: Vuforia/COTElectricShop.xml
+  mCastedBehaviour: {fileID: 552004241}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &570534956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1897,7 @@ GameObject:
   - component: {fileID: 570534957}
   - component: {fileID: 570534960}
   - component: {fileID: 570534959}
-  - component: {fileID: 570534958}
+  - component: {fileID: 570534961}
   m_Layer: 0
   m_Name: TennisCourt4
   m_TagString: Untagged
@@ -1598,25 +1920,6 @@ Transform:
   m_Father: {fileID: 1953842275}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &570534958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570534956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 570534960}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: TennisCourt5
-  mDatasetName: Vuforia/TennisCourt.xml
-  mCastedBehaviour: {fileID: 570534960}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &570534959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1657,10 +1960,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953842276}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953842276}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &570534960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,7 +2013,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 570534958}
+  mPreview: {fileID: 570534961}
+--- !u!114 &570534961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570534956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 570534960}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: TennisCourt5
+  mDatasetName: Vuforia/TennisCourt.xml
+  mCastedBehaviour: {fileID: 570534960}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &656667183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +2044,7 @@ GameObject:
   - component: {fileID: 656667184}
   - component: {fileID: 656667187}
   - component: {fileID: 656667186}
-  - component: {fileID: 656667185}
+  - component: {fileID: 656667188}
   m_Layer: 0
   m_Name: COTMachine2
   m_TagString: Untagged
@@ -1721,25 +2067,6 @@ Transform:
   m_Father: {fileID: 517711225}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &656667185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656667183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 656667187}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMachineShop2
-  mDatasetName: Vuforia/COTMAchineShop.xml
-  mCastedBehaviour: {fileID: 656667187}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &656667186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1780,10 +2107,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517711227}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517711227}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &656667187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1809,7 +2160,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 656667185}
+  mPreview: {fileID: 656667188}
+--- !u!114 &656667188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656667183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 656667187}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMachineShop2
+  mDatasetName: Vuforia/COTMAchineShop.xml
+  mCastedBehaviour: {fileID: 656667187}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &850435926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,7 +2191,7 @@ GameObject:
   - component: {fileID: 850435927}
   - component: {fileID: 850435930}
   - component: {fileID: 850435929}
-  - component: {fileID: 850435928}
+  - component: {fileID: 850435931}
   m_Layer: 0
   m_Name: Admin2
   m_TagString: Untagged
@@ -1844,25 +2214,6 @@ Transform:
   m_Father: {fileID: 1410066276}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &850435928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850435926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 850435930}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: admintrack2
-  mDatasetName: Vuforia/AdminDb.xml
-  mCastedBehaviour: {fileID: 850435930}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &850435929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1903,10 +2254,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410066277}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410066277}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &850435930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1932,7 +2307,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 850435928}
+  mPreview: {fileID: 850435931}
+--- !u!114 &850435931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850435926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 850435930}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: admintrack2
+  mDatasetName: Vuforia/AdminDb.xml
+  mCastedBehaviour: {fileID: 850435930}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &876750366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,7 +2338,7 @@ GameObject:
   - component: {fileID: 876750367}
   - component: {fileID: 876750370}
   - component: {fileID: 876750369}
-  - component: {fileID: 876750368}
+  - component: {fileID: 876750371}
   m_Layer: 0
   m_Name: COTMain
   m_TagString: Untagged
@@ -1967,25 +2361,6 @@ Transform:
   m_Father: {fileID: 168951667}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &876750368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876750366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 876750370}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMain
-  mDatasetName: Vuforia/COTMain.xml
-  mCastedBehaviour: {fileID: 876750370}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &876750369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,10 +2401,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168951669}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onCollegeFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168951669}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &876750370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2055,7 +2454,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 876750368}
+  mPreview: {fileID: 876750371}
+--- !u!114 &876750371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876750366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 876750370}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMain
+  mDatasetName: Vuforia/COTMain.xml
+  mCastedBehaviour: {fileID: 876750370}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &924740541
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,7 +2485,7 @@ GameObject:
   - component: {fileID: 924740542}
   - component: {fileID: 924740545}
   - component: {fileID: 924740544}
-  - component: {fileID: 924740543}
+  - component: {fileID: 924740546}
   m_Layer: 0
   m_Name: COTGirls2
   m_TagString: Untagged
@@ -2090,25 +2508,6 @@ Transform:
   m_Father: {fileID: 168034261}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &924740543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924740541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 924740545}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTGirlsTrade
-  mDatasetName: Vuforia/COTGirlsTrade.xml
-  mCastedBehaviour: {fileID: 924740545}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &924740544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2149,10 +2548,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168034262}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168034262}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &924740545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2178,7 +2601,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 924740543}
+  mPreview: {fileID: 924740546}
+--- !u!114 &924740546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924740541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 924740545}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTGirlsTrade
+  mDatasetName: Vuforia/COTGirlsTrade.xml
+  mCastedBehaviour: {fileID: 924740545}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &957400585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,7 +2632,7 @@ GameObject:
   - component: {fileID: 957400586}
   - component: {fileID: 957400589}
   - component: {fileID: 957400588}
-  - component: {fileID: 957400587}
+  - component: {fileID: 957400590}
   m_Layer: 0
   m_Name: COTGirls
   m_TagString: Untagged
@@ -2213,25 +2655,6 @@ Transform:
   m_Father: {fileID: 168034261}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &957400587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957400585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 957400589}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTGirlsTrade1
-  mDatasetName: Vuforia/COTGirlsTrade.xml
-  mCastedBehaviour: {fileID: 957400589}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &957400588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2272,10 +2695,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168034262}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168034262}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &957400589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2301,7 +2748,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 957400587}
+  mPreview: {fileID: 957400590}
+--- !u!114 &957400590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957400585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 957400589}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTGirlsTrade1
+  mDatasetName: Vuforia/COTGirlsTrade.xml
+  mCastedBehaviour: {fileID: 957400589}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &999573697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,7 +2779,7 @@ GameObject:
   - component: {fileID: 999573698}
   - component: {fileID: 999573701}
   - component: {fileID: 999573700}
-  - component: {fileID: 999573699}
+  - component: {fileID: 999573702}
   m_Layer: 0
   m_Name: COTMain2
   m_TagString: Untagged
@@ -2336,25 +2802,6 @@ Transform:
   m_Father: {fileID: 168951667}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &999573699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999573697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 999573701}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMain2
-  mDatasetName: Vuforia/COTMain.xml
-  mCastedBehaviour: {fileID: 999573701}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &999573700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2395,10 +2842,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168951669}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onCollegeFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168951669}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &999573701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2424,7 +2895,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 999573699}
+  mPreview: {fileID: 999573702}
+--- !u!114 &999573702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999573697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 999573701}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMain2
+  mDatasetName: Vuforia/COTMain.xml
+  mCastedBehaviour: {fileID: 999573701}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1082273149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,7 +2926,7 @@ GameObject:
   - component: {fileID: 1082273150}
   - component: {fileID: 1082273153}
   - component: {fileID: 1082273152}
-  - component: {fileID: 1082273151}
+  - component: {fileID: 1082273154}
   m_Layer: 0
   m_Name: CC
   m_TagString: Untagged
@@ -2459,25 +2949,6 @@ Transform:
   m_Father: {fileID: 1305062246}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1082273151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082273149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1082273153}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: CC
-  mDatasetName: Vuforia/CoveredCourt.xml
-  mCastedBehaviour: {fileID: 1082273153}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1082273152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2518,10 +2989,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305062247}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305062247}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1082273153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2547,7 +3042,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1082273151}
+  mPreview: {fileID: 1082273154}
+--- !u!114 &1082273154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082273149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1082273153}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: CC
+  mDatasetName: Vuforia/CoveredCourt.xml
+  mCastedBehaviour: {fileID: 1082273153}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1100597261
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,7 +3073,7 @@ GameObject:
   - component: {fileID: 1100597262}
   - component: {fileID: 1100597265}
   - component: {fileID: 1100597264}
-  - component: {fileID: 1100597263}
+  - component: {fileID: 1100597266}
   m_Layer: 0
   m_Name: COTMain5
   m_TagString: Untagged
@@ -2582,25 +3096,6 @@ Transform:
   m_Father: {fileID: 168951667}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1100597263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100597261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1100597265}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMain5
-  mDatasetName: Vuforia/COTMain.xml
-  mCastedBehaviour: {fileID: 1100597265}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1100597264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2641,10 +3136,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168951669}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onCollegeFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168951669}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1100597265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2670,7 +3189,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1100597263}
+  mPreview: {fileID: 1100597266}
+--- !u!114 &1100597266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100597261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1100597265}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMain5
+  mDatasetName: Vuforia/COTMain.xml
+  mCastedBehaviour: {fileID: 1100597265}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!224 &1117869211 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2089139556814295681, guid: 2fb7e29ac40b8f74ab24579da9db6767,
@@ -2688,7 +3226,7 @@ GameObject:
   - component: {fileID: 1121520328}
   - component: {fileID: 1121520331}
   - component: {fileID: 1121520330}
-  - component: {fileID: 1121520329}
+  - component: {fileID: 1121520332}
   m_Layer: 0
   m_Name: COTMetal2
   m_TagString: Untagged
@@ -2711,25 +3249,6 @@ Transform:
   m_Father: {fileID: 358639689}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1121520329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121520327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1121520331}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMetals2
-  mDatasetName: Vuforia/COTMetalsShop.xml
-  mCastedBehaviour: {fileID: 1121520331}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1121520330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2770,10 +3289,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 358639690}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 358639690}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1121520331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2799,7 +3342,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1121520329}
+  mPreview: {fileID: 1121520332}
+--- !u!114 &1121520332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121520327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1121520331}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMetals2
+  mDatasetName: Vuforia/COTMetalsShop.xml
+  mCastedBehaviour: {fileID: 1121520331}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1126394497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,7 +3373,7 @@ GameObject:
   - component: {fileID: 1126394498}
   - component: {fileID: 1126394501}
   - component: {fileID: 1126394500}
-  - component: {fileID: 1126394499}
+  - component: {fileID: 1126394502}
   m_Layer: 0
   m_Name: COTMachine
   m_TagString: Untagged
@@ -2834,25 +3396,6 @@ Transform:
   m_Father: {fileID: 517711225}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1126394499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126394497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1126394501}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMachineShop
-  mDatasetName: Vuforia/COTMAchineShop.xml
-  mCastedBehaviour: {fileID: 1126394501}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1126394500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2893,10 +3436,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517711227}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517711227}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1126394501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2922,7 +3489,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1126394499}
+  mPreview: {fileID: 1126394502}
+--- !u!114 &1126394502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126394497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1126394501}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMachineShop
+  mDatasetName: Vuforia/COTMAchineShop.xml
+  mCastedBehaviour: {fileID: 1126394501}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1164925364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2934,7 +3520,7 @@ GameObject:
   - component: {fileID: 1164925365}
   - component: {fileID: 1164925368}
   - component: {fileID: 1164925367}
-  - component: {fileID: 1164925366}
+  - component: {fileID: 1164925369}
   m_Layer: 0
   m_Name: TennisCourt
   m_TagString: Untagged
@@ -2957,25 +3543,6 @@ Transform:
   m_Father: {fileID: 1953842275}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1164925366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164925364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1164925368}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: TennisCourt1
-  mDatasetName: Vuforia/TennisCourt.xml
-  mCastedBehaviour: {fileID: 1164925368}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1164925367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3016,10 +3583,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953842276}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953842276}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1164925368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3045,7 +3636,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1164925366}
+  mPreview: {fileID: 1164925369}
+--- !u!114 &1164925369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164925364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1164925368}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: TennisCourt1
+  mDatasetName: Vuforia/TennisCourt.xml
+  mCastedBehaviour: {fileID: 1164925368}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1219164288
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,6 +3665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1219164289}
+  - component: {fileID: 1219164290}
   m_Layer: 0
   m_Name: GuardHouse
   m_TagString: Untagged
@@ -3077,6 +3688,23 @@ Transform:
   m_Father: {fileID: 35898334}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219164290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219164288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd11ee553e5f234f94b767ad724f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollegePrefab: {fileID: 5849434375041851420, guid: 0bd95b43c3568a94282d1128ceac5502,
+    type: 3}
+  BuildingPrefab: {fileID: 4715036304408825465, guid: 8397d7909ab2af64ca68e621df12ebef,
+    type: 3}
+  DMMMMSUMap: {fileID: 209792240}
 --- !u!1 &1252645513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3088,7 +3716,7 @@ GameObject:
   - component: {fileID: 1252645514}
   - component: {fileID: 1252645517}
   - component: {fileID: 1252645516}
-  - component: {fileID: 1252645515}
+  - component: {fileID: 1252645518}
   m_Layer: 0
   m_Name: COTElectric3
   m_TagString: Untagged
@@ -3111,25 +3739,6 @@ Transform:
   m_Father: {fileID: 196285481}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1252645515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252645513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1252645517}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTElectricShop3
-  mDatasetName: Vuforia/COTElectricShop.xml
-  mCastedBehaviour: {fileID: 1252645517}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1252645516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3170,10 +3779,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196285482}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196285482}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1252645517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3199,7 +3832,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1252645515}
+  mPreview: {fileID: 1252645518}
+--- !u!114 &1252645518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252645513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1252645517}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTElectricShop3
+  mDatasetName: Vuforia/COTElectricShop.xml
+  mCastedBehaviour: {fileID: 1252645517}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1305062245
 GameObject:
   m_ObjectHideFlags: 0
@@ -3209,6 +3861,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1305062246}
+  - component: {fileID: 1305062247}
   m_Layer: 0
   m_Name: CoveredCourt
   m_TagString: Untagged
@@ -3236,6 +3889,23 @@ Transform:
   m_Father: {fileID: 35898334}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305062247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305062245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd11ee553e5f234f94b767ad724f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollegePrefab: {fileID: 5849434375041851420, guid: 0bd95b43c3568a94282d1128ceac5502,
+    type: 3}
+  BuildingPrefab: {fileID: 4715036304408825465, guid: 8397d7909ab2af64ca68e621df12ebef,
+    type: 3}
+  DMMMMSUMap: {fileID: 209792240}
 --- !u!1 &1313220900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,7 +3917,7 @@ GameObject:
   - component: {fileID: 1313220901}
   - component: {fileID: 1313220904}
   - component: {fileID: 1313220903}
-  - component: {fileID: 1313220902}
+  - component: {fileID: 1313220905}
   m_Layer: 0
   m_Name: COTMachine3
   m_TagString: Untagged
@@ -3270,25 +3940,6 @@ Transform:
   m_Father: {fileID: 517711225}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1313220902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313220900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1313220904}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMachineShop3
-  mDatasetName: Vuforia/COTMAchineShop.xml
-  mCastedBehaviour: {fileID: 1313220904}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1313220903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3329,10 +3980,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517711227}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517711227}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1313220904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3358,7 +4033,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1313220902}
+  mPreview: {fileID: 1313220905}
+--- !u!114 &1313220905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313220900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1313220904}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMachineShop3
+  mDatasetName: Vuforia/COTMAchineShop.xml
+  mCastedBehaviour: {fileID: 1313220904}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1323292295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,7 +4064,7 @@ GameObject:
   - component: {fileID: 1323292296}
   - component: {fileID: 1323292299}
   - component: {fileID: 1323292298}
-  - component: {fileID: 1323292297}
+  - component: {fileID: 1323292300}
   m_Layer: 0
   m_Name: CC1
   m_TagString: Untagged
@@ -3393,25 +4087,6 @@ Transform:
   m_Father: {fileID: 1305062246}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1323292297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323292295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1323292299}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: CC1
-  mDatasetName: Vuforia/CoveredCourt.xml
-  mCastedBehaviour: {fileID: 1323292299}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1323292298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3452,10 +4127,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305062247}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305062247}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1323292299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3481,7 +4180,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1323292297}
+  mPreview: {fileID: 1323292300}
+--- !u!114 &1323292300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323292295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1323292299}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: CC1
+  mDatasetName: Vuforia/CoveredCourt.xml
+  mCastedBehaviour: {fileID: 1323292299}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1402548889
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,6 +4259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1410066276}
+  - component: {fileID: 1410066277}
   m_Layer: 0
   m_Name: NewAdminBuilding
   m_TagString: Untagged
@@ -3568,6 +4287,23 @@ Transform:
   m_Father: {fileID: 35898334}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1410066277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410066275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd11ee553e5f234f94b767ad724f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollegePrefab: {fileID: 5849434375041851420, guid: 0bd95b43c3568a94282d1128ceac5502,
+    type: 3}
+  BuildingPrefab: {fileID: 4715036304408825465, guid: 8397d7909ab2af64ca68e621df12ebef,
+    type: 3}
+  DMMMMSUMap: {fileID: 209792240}
 --- !u!1 &1444087594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,7 +4315,7 @@ GameObject:
   - component: {fileID: 1444087595}
   - component: {fileID: 1444087598}
   - component: {fileID: 1444087597}
-  - component: {fileID: 1444087596}
+  - component: {fileID: 1444087599}
   m_Layer: 0
   m_Name: COTMain4
   m_TagString: Untagged
@@ -3602,25 +4338,6 @@ Transform:
   m_Father: {fileID: 168951667}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1444087596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444087594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1444087598}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMain4
-  mDatasetName: Vuforia/COTMain.xml
-  mCastedBehaviour: {fileID: 1444087598}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1444087597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3661,10 +4378,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168951669}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onCollegeFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168951669}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1444087598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3690,7 +4431,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1444087596}
+  mPreview: {fileID: 1444087599}
+--- !u!114 &1444087599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444087594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1444087598}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMain4
+  mDatasetName: Vuforia/COTMain.xml
+  mCastedBehaviour: {fileID: 1444087598}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1001 &1453709016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3967,7 +4727,7 @@ GameObject:
   - component: {fileID: 1623180929}
   - component: {fileID: 1623180932}
   - component: {fileID: 1623180931}
-  - component: {fileID: 1623180930}
+  - component: {fileID: 1623180933}
   m_Layer: 0
   m_Name: TennisCourt2
   m_TagString: Untagged
@@ -3990,25 +4750,6 @@ Transform:
   m_Father: {fileID: 1953842275}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1623180930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623180928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1623180932}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: TennisCourt3
-  mDatasetName: Vuforia/TennisCourt.xml
-  mCastedBehaviour: {fileID: 1623180932}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1623180931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4049,10 +4790,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953842276}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953842276}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1623180932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4078,7 +4843,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1623180930}
+  mPreview: {fileID: 1623180933}
+--- !u!114 &1623180933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623180928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1623180932}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: TennisCourt3
+  mDatasetName: Vuforia/TennisCourt.xml
+  mCastedBehaviour: {fileID: 1623180932}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1698932902
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,7 +4874,7 @@ GameObject:
   - component: {fileID: 1698932903}
   - component: {fileID: 1698932906}
   - component: {fileID: 1698932905}
-  - component: {fileID: 1698932904}
+  - component: {fileID: 1698932907}
   m_Layer: 0
   m_Name: CC3
   m_TagString: Untagged
@@ -4113,25 +4897,6 @@ Transform:
   m_Father: {fileID: 1305062246}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1698932904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698932902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1698932906}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: CC3
-  mDatasetName: Vuforia/CoveredCourt.xml
-  mCastedBehaviour: {fileID: 1698932906}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1698932905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4172,10 +4937,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305062247}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305062247}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1698932906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4201,7 +4990,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1698932904}
+  mPreview: {fileID: 1698932907}
+--- !u!114 &1698932907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698932902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1698932906}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: CC3
+  mDatasetName: Vuforia/CoveredCourt.xml
+  mCastedBehaviour: {fileID: 1698932906}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1707333582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,7 +5021,7 @@ GameObject:
   - component: {fileID: 1707333583}
   - component: {fileID: 1707333586}
   - component: {fileID: 1707333585}
-  - component: {fileID: 1707333584}
+  - component: {fileID: 1707333587}
   m_Layer: 0
   m_Name: CC4
   m_TagString: Untagged
@@ -4236,25 +5044,6 @@ Transform:
   m_Father: {fileID: 1305062246}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1707333584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707333582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1707333586}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: CC4
-  mDatasetName: Vuforia/CoveredCourt.xml
-  mCastedBehaviour: {fileID: 1707333586}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1707333585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4295,10 +5084,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305062247}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305062247}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1707333586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4324,7 +5137,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1707333584}
+  mPreview: {fileID: 1707333587}
+--- !u!114 &1707333587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707333582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1707333586}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: CC4
+  mDatasetName: Vuforia/CoveredCourt.xml
+  mCastedBehaviour: {fileID: 1707333586}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1718813978
 GameObject:
   m_ObjectHideFlags: 0
@@ -4439,7 +5271,7 @@ GameObject:
   - component: {fileID: 1729016559}
   - component: {fileID: 1729016562}
   - component: {fileID: 1729016561}
-  - component: {fileID: 1729016560}
+  - component: {fileID: 1729016563}
   m_Layer: 0
   m_Name: COTMetal3
   m_TagString: Untagged
@@ -4462,25 +5294,6 @@ Transform:
   m_Father: {fileID: 358639689}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1729016560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729016558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1729016562}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMachine3
-  mDatasetName: Vuforia/COTMetalsShop.xml
-  mCastedBehaviour: {fileID: 1729016562}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1729016561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4521,10 +5334,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 358639690}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 358639690}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1729016562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4550,7 +5387,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1729016560}
+  mPreview: {fileID: 1729016563}
+--- !u!114 &1729016563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729016558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1729016562}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMachine3
+  mDatasetName: Vuforia/COTMetalsShop.xml
+  mCastedBehaviour: {fileID: 1729016562}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1753656105
 GameObject:
   m_ObjectHideFlags: 0
@@ -4562,7 +5418,7 @@ GameObject:
   - component: {fileID: 1753656106}
   - component: {fileID: 1753656109}
   - component: {fileID: 1753656108}
-  - component: {fileID: 1753656107}
+  - component: {fileID: 1753656110}
   m_Layer: 0
   m_Name: COTShop2
   m_TagString: Untagged
@@ -4585,25 +5441,6 @@ Transform:
   m_Father: {fileID: 249335876}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1753656107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753656105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1753656109}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTShop
-  mDatasetName: Vuforia/COTShopDB.xml
-  mCastedBehaviour: {fileID: 1753656109}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1753656108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4644,10 +5481,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 249335877}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 249335877}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1753656109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4673,7 +5534,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1753656107}
+  mPreview: {fileID: 1753656110}
+--- !u!114 &1753656110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753656105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1753656109}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTShop
+  mDatasetName: Vuforia/COTShopDB.xml
+  mCastedBehaviour: {fileID: 1753656109}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1819632752
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,7 +5565,7 @@ GameObject:
   - component: {fileID: 1819632753}
   - component: {fileID: 1819632756}
   - component: {fileID: 1819632755}
-  - component: {fileID: 1819632754}
+  - component: {fileID: 1819632757}
   m_Layer: 0
   m_Name: Admin5
   m_TagString: Untagged
@@ -4708,25 +5588,6 @@ Transform:
   m_Father: {fileID: 1410066276}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1819632754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819632752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1819632756}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: AdminTrack5
-  mDatasetName: Vuforia/AdminDb.xml
-  mCastedBehaviour: {fileID: 1819632756}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1819632755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4767,10 +5628,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410066277}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410066277}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1819632756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4796,7 +5681,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1819632754}
+  mPreview: {fileID: 1819632757}
+--- !u!114 &1819632757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819632752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1819632756}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: AdminTrack5
+  mDatasetName: Vuforia/AdminDb.xml
+  mCastedBehaviour: {fileID: 1819632756}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1880177666
 GameObject:
   m_ObjectHideFlags: 0
@@ -4808,7 +5712,7 @@ GameObject:
   - component: {fileID: 1880177667}
   - component: {fileID: 1880177670}
   - component: {fileID: 1880177669}
-  - component: {fileID: 1880177668}
+  - component: {fileID: 1880177671}
   m_Layer: 0
   m_Name: CC2
   m_TagString: Untagged
@@ -4831,25 +5735,6 @@ Transform:
   m_Father: {fileID: 1305062246}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1880177668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880177666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1880177670}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: CC2
-  mDatasetName: Vuforia/CoveredCourt.xml
-  mCastedBehaviour: {fileID: 1880177670}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1880177669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4890,10 +5775,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305062247}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305062247}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1880177670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4919,7 +5828,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1880177668}
+  mPreview: {fileID: 1880177671}
+--- !u!114 &1880177671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880177666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1880177670}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: CC2
+  mDatasetName: Vuforia/CoveredCourt.xml
+  mCastedBehaviour: {fileID: 1880177670}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1896317806
 GameObject:
   m_ObjectHideFlags: 0
@@ -4931,7 +5859,7 @@ GameObject:
   - component: {fileID: 1896317807}
   - component: {fileID: 1896317810}
   - component: {fileID: 1896317809}
-  - component: {fileID: 1896317808}
+  - component: {fileID: 1896317811}
   m_Layer: 0
   m_Name: COTElectric
   m_TagString: Untagged
@@ -4954,25 +5882,6 @@ Transform:
   m_Father: {fileID: 196285481}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1896317808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896317806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1896317810}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTElectricShop
-  mDatasetName: Vuforia/COTElectricShop.xml
-  mCastedBehaviour: {fileID: 1896317810}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1896317809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5013,10 +5922,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196285482}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196285482}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1896317810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5042,7 +5975,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1896317808}
+  mPreview: {fileID: 1896317811}
+--- !u!114 &1896317811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896317806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1896317810}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTElectricShop
+  mDatasetName: Vuforia/COTElectricShop.xml
+  mCastedBehaviour: {fileID: 1896317810}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1923165276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5146,6 +6098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1953842275}
+  - component: {fileID: 1953842276}
   m_Layer: 0
   m_Name: TennisCourt
   m_TagString: Untagged
@@ -5173,6 +6126,23 @@ Transform:
   m_Father: {fileID: 35898334}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1953842276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953842274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd11ee553e5f234f94b767ad724f1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollegePrefab: {fileID: 5849434375041851420, guid: 0bd95b43c3568a94282d1128ceac5502,
+    type: 3}
+  BuildingPrefab: {fileID: 4715036304408825465, guid: 8397d7909ab2af64ca68e621df12ebef,
+    type: 3}
+  DMMMMSUMap: {fileID: 209792240}
 --- !u!1 &1956588292
 GameObject:
   m_ObjectHideFlags: 0
@@ -5296,7 +6266,7 @@ GameObject:
   - component: {fileID: 1965108117}
   - component: {fileID: 1965108120}
   - component: {fileID: 1965108119}
-  - component: {fileID: 1965108118}
+  - component: {fileID: 1965108121}
   m_Layer: 0
   m_Name: Admin1
   m_TagString: Untagged
@@ -5319,25 +6289,6 @@ Transform:
   m_Father: {fileID: 1410066276}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1965108118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1965108116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1965108120}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: adminTrack1
-  mDatasetName: Vuforia/AdminDb.xml
-  mCastedBehaviour: {fileID: 1965108120}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1965108119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5378,10 +6329,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410066277}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410066277}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1965108120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5407,7 +6382,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1965108118}
+  mPreview: {fileID: 1965108121}
+--- !u!114 &1965108121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965108116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1965108120}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: adminTrack1
+  mDatasetName: Vuforia/AdminDb.xml
+  mCastedBehaviour: {fileID: 1965108120}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &2014536094
 GameObject:
   m_ObjectHideFlags: 0
@@ -5487,7 +6481,7 @@ GameObject:
   - component: {fileID: 2049330668}
   - component: {fileID: 2049330671}
   - component: {fileID: 2049330670}
-  - component: {fileID: 2049330669}
+  - component: {fileID: 2049330672}
   m_Layer: 0
   m_Name: COTMetal5
   m_TagString: Untagged
@@ -5510,25 +6504,6 @@ Transform:
   m_Father: {fileID: 358639689}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2049330669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049330667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 2049330671}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMachine5
-  mDatasetName: Vuforia/COTMetalsShop.xml
-  mCastedBehaviour: {fileID: 2049330671}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &2049330670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5569,10 +6544,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 358639690}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 358639690}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2049330671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5598,7 +6597,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 2049330669}
+  mPreview: {fileID: 2049330672}
+--- !u!114 &2049330672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049330667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 2049330671}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMachine5
+  mDatasetName: Vuforia/COTMetalsShop.xml
+  mCastedBehaviour: {fileID: 2049330671}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &2089645809
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,7 +6628,7 @@ GameObject:
   - component: {fileID: 2089645810}
   - component: {fileID: 2089645813}
   - component: {fileID: 2089645812}
-  - component: {fileID: 2089645811}
+  - component: {fileID: 2089645814}
   m_Layer: 0
   m_Name: TennisCourt1
   m_TagString: Untagged
@@ -5633,25 +6651,6 @@ Transform:
   m_Father: {fileID: 1953842275}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2089645811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089645809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 2089645813}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: TennisCourt2
-  mDatasetName: Vuforia/TennisCourt.xml
-  mCastedBehaviour: {fileID: 2089645813}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &2089645812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5692,10 +6691,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953842276}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953842276}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2089645813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5721,7 +6744,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 2089645811}
+  mPreview: {fileID: 2089645814}
+--- !u!114 &2089645814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089645809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 2089645813}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: TennisCourt2
+  mDatasetName: Vuforia/TennisCourt.xml
+  mCastedBehaviour: {fileID: 2089645813}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &2117094786
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,7 +6775,7 @@ GameObject:
   - component: {fileID: 2117094787}
   - component: {fileID: 2117094790}
   - component: {fileID: 2117094789}
-  - component: {fileID: 2117094788}
+  - component: {fileID: 2117094791}
   m_Layer: 0
   m_Name: TennisCourt3
   m_TagString: Untagged
@@ -5756,25 +6798,6 @@ Transform:
   m_Father: {fileID: 1953842275}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2117094788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117094786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 2117094790}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: TennisCourt4
-  mDatasetName: Vuforia/TennisCourt.xml
-  mCastedBehaviour: {fileID: 2117094790}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &2117094789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5815,10 +6838,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953842276}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953842276}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2117094790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5844,7 +6891,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 2117094788}
+  mPreview: {fileID: 2117094791}
+--- !u!114 &2117094791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117094786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 2117094790}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: TennisCourt4
+  mDatasetName: Vuforia/TennisCourt.xml
+  mCastedBehaviour: {fileID: 2117094790}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &2126856119
 GameObject:
   m_ObjectHideFlags: 0
@@ -5856,7 +6922,7 @@ GameObject:
   - component: {fileID: 2126856120}
   - component: {fileID: 2126856123}
   - component: {fileID: 2126856122}
-  - component: {fileID: 2126856121}
+  - component: {fileID: 2126856124}
   m_Layer: 0
   m_Name: COTMetal4
   m_TagString: Untagged
@@ -5879,25 +6945,6 @@ Transform:
   m_Father: {fileID: 358639689}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2126856121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126856119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 2126856123}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: COTMachine4
-  mDatasetName: Vuforia/COTMetalsShop.xml
-  mCastedBehaviour: {fileID: 2126856123}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &2126856122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5938,10 +6985,34 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 358639690}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onBuildingFound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 358639690}
+        m_TargetAssemblyTypeName: ARTargetFound, Assembly-CSharp
+        m_MethodName: onLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2126856123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5967,7 +7038,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 2126856121}
+  mPreview: {fileID: 2126856124}
+--- !u!114 &2126856124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126856119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 2126856123}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: COTMachine4
+  mDatasetName: Vuforia/COTMetalsShop.xml
+  mCastedBehaviour: {fileID: 2126856123}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!224 &220631853941937859
 RectTransform:
   m_ObjectHideFlags: 0
