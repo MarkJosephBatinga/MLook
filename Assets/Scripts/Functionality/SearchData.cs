@@ -27,7 +27,7 @@ public class SearchData : MonoBehaviour
         {
             inputText.onValueChanged.AddListener(delegate {
                 DestroySearchData();
-                if(inputText.text.Length >= 3)
+                if (inputText.text.Length >= 3)
                 {
                     SearchDictionary();
                 }
@@ -48,7 +48,7 @@ public class SearchData : MonoBehaviour
     {
         var SearchDatas = GameObject.FindGameObjectsWithTag("SearchData");
 
-        if(SearchDatas.Count() != 0)
+        if (SearchDatas.Count() != 0)
         {
             foreach (var searchData in SearchDatas)
             {
@@ -70,15 +70,25 @@ public class SearchData : MonoBehaviour
         foreach (var building in Buildings)
         {
             var buildingDes = building.Value as Dictionary<string, object>;
-            var searchValue = buildingDes.Where(inp => inp.Value.ToString().Contains(textInp)).ToList();
+            foreach (var item in buildingDes)
+            {
+                Debug.Log(item.Key);
+            }
+            var searchValue = buildingDes.Where(inp => inp.Value.ToString().Contains(textInp) && inp.Key.Contains("name")).ToList();
             if(searchValue != null)
             {
                 foreach (var searchData in searchValue)
                 {
+                    Debug.Log(searchData.Key);
                     if(searchData.Key == "name")
                     {
+                        Debug.Log("Key Have a name");
                         SearchValue.SetActive(true);
                         GameObject BuildingData = Instantiate(SearchDataBox, SearchValue.transform);
+                        if(BuildingData != null)
+                        {
+                            Debug.Log("Building Data is Instatiated");
+                        }
                         var SearchText = BuildingData.transform.Find("SearchText");
                         SearchText.GetComponent<TextMeshProUGUI>().text = searchData.Value.ToString();
                     }                   

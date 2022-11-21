@@ -11,7 +11,6 @@ public class ExploreConnection : MonoBehaviour
 {
 
     public GameObject ConnError;
-    public GameObject ExploreText;
 
     private bool isLoading = true;
     public GameObject SpinImg;
@@ -22,7 +21,7 @@ public class ExploreConnection : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("LoadedData") != null)
         {
             StartCoroutine(Spinner());
-            StartCoroutine(ConnectionTest());
+            StartCoroutine(ExploreLoad());
         }
         else
         {
@@ -30,28 +29,12 @@ public class ExploreConnection : MonoBehaviour
         }
     }
 
-    IEnumerator ConnectionTest()
+    IEnumerator ExploreLoad()
     {
-        UnityWebRequest request = new UnityWebRequest("http://google.com");
-        yield return request.SendWebRequest();
+        isLoading = false;
+        SpinImg.SetActive(false);
 
-        if(request.error != null)
-        {
-            SpinImg.SetActive(false);
-            isLoading = false;
-            
-
-            ConnError.SetActive(true);
-            
-        }
-        else
-        {
-            SpinImg.SetActive(false);
-            isLoading = false;
-
-
-            ExploreText.SetActive(true);
-        }
+        yield return null;
     }
 
     private IEnumerator Spinner()

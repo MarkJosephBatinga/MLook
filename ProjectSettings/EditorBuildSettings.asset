@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CollegeDescriptionScene.unity
     guid: c8c0db338c1332343a04a33f933c3e88
+  - enabled: 1
+    path: Assets/Scenes/OfficeDescriptionScene.unity
+    guid: ab1d8a6695f0cbe40ae230d1ca31ad32
+  - enabled: 1
+    path: Assets/Scenes/StaffDescriptionScene.unity
+    guid: 906f6fd3c2eed38429d2ff58cb6f8de7
+  - enabled: 1
+    path: Assets/Scenes/ProgramDescriptionScene.unity
+    guid: 126de9fe27b4348438ef000f5be45e86
   m_configObjects: {}
