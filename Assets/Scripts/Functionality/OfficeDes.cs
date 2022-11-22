@@ -5,10 +5,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class CollegeDes : MonoBehaviour
+public class OfficeDes : MonoBehaviour
 {
+    // Start is called before the first frame update
     [SerializeField]
-    GameObject CollegePrefab;
+    GameObject OfficePrefab;
 
     [SerializeField]
     RawImage MainImg;
@@ -18,6 +19,7 @@ public class CollegeDes : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI CollegeNameText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +42,7 @@ public class CollegeDes : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("CollegeScene");
+                SceneManager.LoadScene("CollegeDescriptionScene");
             }
         }
         else
@@ -67,9 +69,10 @@ public class CollegeDes : MonoBehaviour
             }
         }
 
-        CollegePrefab.SetActive(true);
+        OfficePrefab.SetActive(true);
+        yield return null;
+
 
         yield return null;
     }
-
 }

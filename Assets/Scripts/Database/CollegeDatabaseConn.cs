@@ -84,7 +84,6 @@ public class CollegeDatabaseConn : MonoBehaviour
         if (Key != null)
         {
             GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().CollegeKey = Key;
-
             SceneManager.LoadScene("CollegeDescriptionScene");
         }
     }
