@@ -287,18 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &278647403 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2472786609827326119, guid: 5662870eab3de7c42a98cccbe9658ac4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1489639141}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &530542219
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,12 +569,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cbba15ca91a05418617293c7f1bd2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingPrefab: {fileID: 1256833937}
+  CollegePrefab: {fileID: 1256833937}
   MainImg: {fileID: 1287471666}
   Logo: {fileID: 742736629}
   CollegeNameText: {fileID: 265728349}
-  DeanNameText: {fileID: 278647403}
-  ChairpersonText: {fileID: 1695036965}
 --- !u!1 &1039160489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,18 +1071,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1489639141}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1695036965 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1546707030976642587, guid: 5662870eab3de7c42a98cccbe9658ac4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1489639141}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2085124510
 GameObject:
   m_ObjectHideFlags: 0

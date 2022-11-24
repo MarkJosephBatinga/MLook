@@ -836,6 +836,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OfficePrefab: {fileID: 169076394}
+  OfficeBox: {fileID: 3834223533036233144, guid: 01942a834c56cfb4fb648e02e8cfab8b,
+    type: 3}
+  OfficeArea: {fileID: 1840236453}
   MainImg: {fileID: 169076393}
   Logo: {fileID: 169076392}
   CollegeNameText: {fileID: 169076391}
@@ -1173,6 +1176,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1693894217182896115, guid: 4862f5cf9f5cb7041bc41b04dbc0aa8c,
     type: 3}
   m_PrefabInstance: {fileID: 1448947888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1840236453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8541468452469217836, guid: f0fa130cd225d15478bf23e6a52a2275,
+    type: 3}
+  m_PrefabInstance: {fileID: 169076389}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2085124510
 GameObject:

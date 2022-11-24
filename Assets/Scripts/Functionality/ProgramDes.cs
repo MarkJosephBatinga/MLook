@@ -12,6 +12,12 @@ public class ProgramDes : MonoBehaviour
     GameObject ProgramPrefab;
 
     [SerializeField]
+    GameObject ProgramBox;
+
+    [SerializeField]
+    GameObject ProgramArea;
+
+    [SerializeField]
     RawImage MainImg;
 
     [SerializeField]
@@ -66,6 +72,23 @@ public class ProgramDes : MonoBehaviour
             if (college.Key == "name")
             {
                 CollegeNameText.text = college.Value.ToString();
+            }
+
+            if(college.Key == "programs")
+            {
+                var programs = college.Value as Dictionary<string, object>;
+                foreach (var program in programs)
+                {
+                    var IProgBox = GameObject.Instantiate(ProgramBox, ProgramArea.transform);
+                    var programDes = program.Value as Dictionary<string, object>;
+                    foreach (var des in programDes)
+                    {
+                        if(des.Key == "name")
+                        {
+                            IProgBox.transform.Find("ProgramName").GetComponent<TextMeshProUGUI>().text = des.Value.ToString();
+                        }
+                    }
+                }
             }
         }
 

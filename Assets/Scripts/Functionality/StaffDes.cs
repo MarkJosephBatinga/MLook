@@ -12,6 +12,12 @@ public class StaffDes : MonoBehaviour
     GameObject StaffPrefab;
 
     [SerializeField]
+    GameObject StaffBox;
+
+    [SerializeField]
+    GameObject StaffArea;
+
+    [SerializeField]
     RawImage MainImg;
 
     [SerializeField]
@@ -28,6 +34,7 @@ public class StaffDes : MonoBehaviour
             var Colleges = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Colleges;
             var BuildingImages = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().BuildingImages;
             var CollegeLogos = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().CollegeLogos;
+            var CollegeStaffs = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Staffs;
             var CollegeKey = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().CollegeKey;
 
             if (CollegeKey != null)
@@ -37,6 +44,12 @@ public class StaffDes : MonoBehaviour
                     Texture BuildingImg = BuildingImages[CollegeKey + "b"];
                     Texture CollegeLogo = CollegeLogos[CollegeKey];
                     Dictionary<string, object> CollegeDes = Colleges[CollegeKey] as Dictionary<string, object>;
+                    if (CollegeStaffs.ContainsKey(CollegeKey + "b"))
+                    {
+                        Dictionary<string, object> Staffs = CollegeStaffs[CollegeKey + "b"] as Dictionary<string, object>;
+                        StartCoroutine(DisplayStaffs(Staffs));
+                    }
+                   
                     StartCoroutine(DisplayCollege(CollegeDes, BuildingImg, CollegeLogo));
                 }
             }
@@ -70,6 +83,28 @@ public class StaffDes : MonoBehaviour
         }
 
         StaffPrefab.SetActive(true);
+        yield return null;
+    }
+
+    IEnumerator DisplayStaffs(Dictionary<string, object> CollegeStaffs)
+    {
+        foreach (var staffs in CollegeStaffs)
+        {
+            var IStaffBox = GameObject.Instantiate(StaffBox, StaffArea.transform);
+            var staff = staffs.Value as Dictionary<string, object>;
+            foreach (var des in staff)
+            {
+                if (des.Key == "Name")
+                {
+                    IStaffBox.transform.Find("StaffName").GetComponent<TextMeshProUGUI>().text = des.Value.ToString();
+                }
+                if (des.Key == "Position")
+                {
+                    IStaffBox.transform.Find("StaffPosition").GetComponent<TextMeshProUGUI>().text = des.Value.ToString();
+                }
+            }
+          
+        }
         yield return null;
     }
 }

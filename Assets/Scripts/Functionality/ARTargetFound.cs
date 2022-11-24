@@ -5,6 +5,9 @@ using UnityEngine;
 public class ARTargetFound : MonoBehaviour
 {
     [SerializeField]
+    string Key;
+
+    [SerializeField]
     GameObject CollegePrefab;
 
     [SerializeField]
@@ -21,7 +24,11 @@ public class ARTargetFound : MonoBehaviour
 
     public void onCollegeFound()
     {
-        GameObject ICollegeObject = GameObject.Instantiate(CollegePrefab);
+        if(Key != null)
+        {
+            GameObject ICollegeObject = GameObject.Instantiate(CollegePrefab);
+            ICollegeObject.transform.Find("Behavior").GetComponent<CollegeArPrefab>().CollegeKey = Key;
+        }
     }
 
 

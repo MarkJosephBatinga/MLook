@@ -811,6 +811,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProgramPrefab: {fileID: 222204471}
+  ProgramBox: {fileID: 2771013666549836912, guid: 997dd4522db6f9f45992c634486a1cf1,
+    type: 3}
+  ProgramArea: {fileID: 1117054831}
   MainImg: {fileID: 222204470}
   Logo: {fileID: 222204469}
   CollegeNameText: {fileID: 222204468}
@@ -908,6 +911,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1117054831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8541468452469217836, guid: 9d0d8d2dc4710bd42b1fefe4722acfdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 222204466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1166814614
 GameObject:
   m_ObjectHideFlags: 0
