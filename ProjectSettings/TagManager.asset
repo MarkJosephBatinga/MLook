@@ -8,6 +8,7 @@ TagManager:
   - SearchData
   - ARBuildingPrefab
   - ARCollegePrefab
+  - Building
   layers:
   - Default
   - TransparentFX

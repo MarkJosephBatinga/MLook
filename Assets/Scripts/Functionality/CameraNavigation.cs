@@ -5,88 +5,39 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class CameraNavigation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField]
-    private Camera cam;
+    //the reate of progression with panning
+    public float Speed;
 
-    [SerializeField]
-    private SpriteRenderer mapRenderer;
-
-    [SerializeField]
-    private float zoomStep, minCamSize, maxCamSize;
-
-
-    public Vector3 dragOrigin;
-
-    private float mapMinX, mapMaxX, mapMinY, mapMaxY;
-
-    private void Awake()
+    private void Update()
     {
-        mapMinX = mapRenderer.transform.position.x - mapRenderer.bounds.size.x / 2f;
-        mapMaxX = mapRenderer.transform.position.x + mapRenderer.bounds.size.x / 2f;
-
-        mapMinY = mapRenderer.transform.position.y - mapRenderer.bounds.size.y / 2f;
-        mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        CameraPan();
-    }
-
-    public void BtnClick()
-    {
-        Debug.Log("Click");
-    }
-
-    void CameraPan()
-    {
-        if (Input.GetMouseButtonDown(0))
+        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
-            dragOrigin = cam.ScreenToWorldPoint(Input.mousePosition);
-        }
+            Vector2 TouchDeltaPosition = Input.GetTouch(0).deltaPosition;
 
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
+            transform.Translate(-TouchDeltaPosition.x * Speed, -TouchDeltaPosition.y * Speed, 0);
 
-            cam.transform.position = ClampCamera(cam.transform.position + difference);
+            transform.position = new Vector3(
+                Mathf.Clamp(transform.position.x, -315f, 300f),
+                Mathf.Clamp(transform.position.y, 200f, 200f),
+                Mathf.Clamp(transform.position.z, -355f, 485f));
         }
     }
 
-    public void ZoomIn()
+
+    public void OnZoomIn()
     {
-        float newSize = cam.orthographicSize - zoomStep;
-
-        cam.orthographicSize = Mathf.Clamp(newSize, minCamSize, maxCamSize);
-
-        cam.transform.position = ClampCamera(cam.transform.position);
+        
+        if (transform.GetComponent<Camera>().fieldOfView >= 30)
+        {
+            transform.GetComponent<Camera>().fieldOfView -= 10;
+        }
     }
 
-    public void ZoomOut()
+    public void OnZoomOut()
     {
-        float newSize = cam.orthographicSize + zoomStep;
-
-        cam.orthographicSize = Mathf.Clamp(newSize, minCamSize, maxCamSize);
-
-        cam.transform.position = ClampCamera(cam.transform.position);
+        if (transform.GetComponent<Camera>().fieldOfView <= 70)
+        {
+            transform.GetComponent<Camera>().fieldOfView += 10;
+        }
     }
-
-    private Vector3 ClampCamera(Vector3 targetPosition)
-    {
-        float camHeight = cam.orthographicSize;
-        float camWidth = cam.orthographicSize * cam.aspect;
-
-        float minX = mapMinX + camWidth;
-        float maxX = mapMaxX - camWidth;
-        float minY = mapMinY + camHeight;
-        float maxY = mapMaxY - camHeight;
-
-        float newX = Mathf.Clamp(targetPosition.x, minX, maxX);
-        float newY = Mathf.Clamp(targetPosition.y, minY, maxY);
-
-        return new Vector3(newX, newY, targetPosition.z);
-    }
-
 }
