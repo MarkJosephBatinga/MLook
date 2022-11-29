@@ -9,6 +9,7 @@ TagManager:
   - ARBuildingPrefab
   - ARCollegePrefab
   - Building
+  - Build3dPrefab
   layers:
   - Default
   - TransparentFX
