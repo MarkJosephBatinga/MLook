@@ -8,6 +8,8 @@ public class CameraNavigation : MonoBehaviour
     //the reate of progression with panning
     public float Speed;
 
+    public float maxPosY = 300f;
+
     private void Update()
     {
         if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
@@ -18,8 +20,8 @@ public class CameraNavigation : MonoBehaviour
 
             transform.position = new Vector3(
                 Mathf.Clamp(transform.position.x, -315f, 300f),
-                Mathf.Clamp(transform.position.y, 200f, 200f),
-                Mathf.Clamp(transform.position.z, -355f, 485f));
+                Mathf.Clamp(transform.position.y, 300f, maxPosY),
+                Mathf.Clamp(transform.position.z, -520f, 580f));
         }
     }
 
@@ -35,9 +37,9 @@ public class CameraNavigation : MonoBehaviour
 
     public void OnZoomOut()
     {
-        if (transform.GetComponent<Camera>().fieldOfView <= 70)
+        if (transform.GetComponent<Camera>().fieldOfView <= 100)
         {
-            transform.GetComponent<Camera>().fieldOfView += 10;
+            transform.GetComponent<Camera>().fieldOfView += 20;
         }
     }
 }
