@@ -20,4 +20,12 @@ public class Data : MonoBehaviour
 
 
     public string CollegeKey;
+
+
+
+    //Searched Data
+
+    public string SearchedStaff;
+    public string SearchedCollege;
+    public string SearchedBuilding;
 }

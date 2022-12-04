@@ -20,46 +20,57 @@ public class BuildingClick : MonoBehaviour
 
     void Update()
     {
-       
-
-        ///// PICK UP IF USER TAPS
-        if (Input.touchCount > 0 &&  Input.GetTouch(0).phase == TouchPhase.Began)
-    {
-            ////// CAST RAY TO PICK UP HITS
-            ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        for (var i = 0; i < Input.touchCount; ++i)
+        {
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
-                if (hit.transform.position == transform.position)
+                if (Input.GetTouch(i).tapCount == 2)
                 {
-                    if(Build3dPrefab != null)
+                    ////// CAST RAY TO PICK UP HITS
+                    ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                     {
-                        var Last3dPrefab = GameObject.FindGameObjectWithTag("Build3dPrefab");
-                        if(Last3dPrefab != null)
+                        if (hit.transform.position == transform.position)
                         {
-                            RemoveLastClick(Last3dPrefab);
-                           
+                            if (Build3dPrefab != null)
+                            {
+                                var Last3dPrefab = GameObject.FindGameObjectWithTag("Build3dPrefab");
+                                if (Last3dPrefab != null)
+                                {
+                                    RemoveLastClick(Last3dPrefab);
+
+                                }
+
+                                //Create New Instance of #dBuildPrefab
+                                var IBuildPrefab = GameObject.Instantiate(Build3dPrefab,
+                                new Vector3(transform.position.x, GetComponent<BoxCollider>().size.z * 9,
+                                transform.position.z), Quaternion.identity);//Set it's transform to the top of the building
+
+                                //Change the BuildName text to the name of the building and change it's color
+                                IBuildPrefab.transform.Find("BuildName").GetComponent<TextMeshPro>().text = this.name;
+                                transform.GetComponent<MeshRenderer>().material = ColorChange;
+
+                                //Display the path from the gate
+                                string Section = transform.parent.name;
+                                string pathName = "GATE-" + this.name;
+                                GetGatePath(Section, pathName);
+                            }
                         }
-
-                        //Create New Instance of #dBuildPrefab
-                        var IBuildPrefab = GameObject.Instantiate(Build3dPrefab,
-                        new Vector3(transform.position.x, GetComponent<BoxCollider>().size.z * 9,
-                        transform.position.z), Quaternion.identity);//Set it's transform to the top of the building
-
-                        //Change the BuildName text to the name of the building and change it's color
-                        IBuildPrefab.transform.Find("BuildName").GetComponent<TextMeshPro>().text = this.name;
-                        transform.GetComponent<MeshRenderer>().material = ColorChange;
-
-                        //Display the path from the gate
-                        string Section = transform.parent.name;
-                        string pathName = "GATE-" + this.name;
-                        GetGatePath(Section, pathName);
-                    }
+                    } //// END OF RAYCAST
                 }
-            } //// END OF RAYCAST
-        }  //// END OF TOUCH BEGAN
+            }
+        }
+
+      /*  ///// PICK UP IF USER TAPS
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+           
+        }  //// END OF TOUCH BEGAN*/
 
     } //// END UP UPDATE
+
+
     public void RemoveLastClick(GameObject Last3dPrefab)
     {
         var buildingName = Last3dPrefab.transform.Find("BuildName").GetComponent<TextMeshPro>().text;
@@ -78,6 +89,7 @@ public class BuildingClick : MonoBehaviour
             }
 
         }
+
         GameObject.Destroy(Last3dPrefab);
     }
 

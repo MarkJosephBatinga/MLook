@@ -158,7 +158,7 @@ Transform:
   m_Children:
   - {fileID: 1187790153}
   m_Father: {fileID: 1030836735}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5970881
 MonoBehaviour:
@@ -10031,7 +10031,7 @@ Transform:
   m_Children:
   - {fileID: 1587080571}
   m_Father: {fileID: 1030836735}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &493578051
 MonoBehaviour:
@@ -12280,7 +12280,7 @@ Transform:
   m_Children:
   - {fileID: 284850522}
   m_Father: {fileID: 1030836735}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &628338072
 MonoBehaviour:
@@ -14446,9 +14446,10 @@ GameObject:
   - component: {fileID: 778789771}
   - component: {fileID: 778789773}
   - component: {fileID: 778789772}
+  - component: {fileID: 778789774}
   m_Layer: 0
   m_Name: DMMMSU South Guard House
-  m_TagString: ClickableBuilding
+  m_TagString: NonClickableBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14466,8 +14467,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1180838558}
-  m_Father: {fileID: 1030836735}
-  m_RootOrder: 8
+  m_Father: {fileID: 1051189693}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &778789772
 MeshRenderer:
@@ -14519,6 +14520,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778789770}
   m_Mesh: {fileID: -4735448512347958747, guid: 3eec13ec86de03e47b18b4da8c9166fd, type: 3}
+--- !u!114 &778789774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778789770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa75ee57e88728a439a16eaff419fa53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 0}
+  Section: 
 --- !u!1 &782016934
 GameObject:
   m_ObjectHideFlags: 0
@@ -16246,7 +16261,7 @@ GameObject:
   - component: {fileID: 849117485}
   - component: {fileID: 849117484}
   m_Layer: 0
-  m_Name: COM-FOODOURT
+  m_Name: COM-FOODCOURT
   m_TagString: Pathway
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19881,7 +19896,6 @@ Transform:
   - {fileID: 1476487456}
   - {fileID: 1943532314}
   - {fileID: 1370769684}
-  - {fileID: 778789771}
   - {fileID: 5970880}
   - {fileID: 1604778236}
   - {fileID: 493578050}
@@ -19921,8 +19935,9 @@ Transform:
   - {fileID: 1713190078}
   - {fileID: 1359307456}
   - {fileID: 730330320}
+  - {fileID: 778789771}
   m_Father: {fileID: 1030836735}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1058366951
 GameObject:
@@ -31597,7 +31612,7 @@ Transform:
   m_Children:
   - {fileID: 634156648}
   m_Father: {fileID: 1030836735}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1604778237
 MonoBehaviour:
@@ -40579,7 +40594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f708d72f791e243a501db84d1196b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.2
+  Speed: 0.5
   maxPosY: 300
 --- !u!81 &1974403015
 AudioListener:

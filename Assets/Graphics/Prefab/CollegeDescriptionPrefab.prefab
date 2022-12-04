@@ -663,7 +663,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7810824497241055993}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6630050630238707909}
+        m_TargetAssemblyTypeName: OnBuildLocate, Assembly-CSharp
+        m_MethodName: OnCoLocateClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2015077997198098077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,6 +2056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7912424657397746932}
   - component: {fileID: 4415433336979763119}
+  - component: {fileID: 6630050630238707909}
   m_Layer: 5
   m_Name: Behavior
   m_TagString: Untagged
@@ -2081,6 +2094,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88b3872fc6878cf41b7afeb1e966d76f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6630050630238707909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6901293038149041082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d7a5b8698cbc548bc450df9f5461df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7006314462205264161

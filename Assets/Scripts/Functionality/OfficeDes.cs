@@ -31,6 +31,10 @@ public class OfficeDes : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("LoadedData") != null)
         {
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().SearchedStaff = null;
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().SearchedBuilding = null;
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().SearchedCollege = null;
+
             var Colleges = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Colleges;
             var BuildingImages = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().BuildingImages;
             var CollegeLogos = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().CollegeLogos;

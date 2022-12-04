@@ -23,6 +23,10 @@ public class CollegeDatabaseConn : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("LoadedData") != null)
         {
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().SearchedStaff = null;
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().SearchedBuilding = null;
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().SearchedCollege = null;
+
             var Colleges = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Colleges;
             var CollegeLogos = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().CollegeLogos;
             StartCoroutine(Spinner());
@@ -42,6 +46,8 @@ public class CollegeDatabaseConn : MonoBehaviour
             var collegeDes = college.Value as Dictionary<string, object>;
             GameObject collegeBox = Instantiate(CollegeBox, BoxContainer.transform);
             GameObject DescripBtn = collegeBox.transform.Find("Des_Button").GameObject(); 
+            GameObject LocBtn = collegeBox.transform.Find("Locate_Button").GameObject(); 
+
             var collegeNameText = collegeBox.transform.Find("College_Name");
             if (CollegeLogos.ContainsKey(college.Key))
             {
@@ -73,6 +79,15 @@ public class CollegeDatabaseConn : MonoBehaviour
                 });
             }
 
+            if (LocBtn != null)
+            {
+                Button LocD = LocBtn.GetComponent<Button>();
+                LocD.onClick.AddListener(() =>
+                {
+                    OnLocateClick(college.Key);
+                });
+            }
+
         }
 
         yield return true;
@@ -85,6 +100,15 @@ public class CollegeDatabaseConn : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().CollegeKey = Key;
             SceneManager.LoadScene("CollegeDescriptionScene");
+        }
+    }
+
+    private void OnLocateClick(string Key)
+    {
+        if (Key != null)
+        {
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().SearchedCollege = Key;
+            SceneManager.LoadScene("SearchMapScene");
         }
     }
 

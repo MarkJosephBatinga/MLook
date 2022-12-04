@@ -151,7 +151,10 @@ public class ExploreConnection : MonoBehaviour
                 foreach (var building in NonClickableBuildings)
                 {
                     var dMaterial = building.GetComponent<BuildingKey>().defaultMaterial;
-                    building.GetComponent<MeshRenderer>().material = dMaterial;
+                    if(dMaterial != null)
+                    {
+                        building.GetComponent<MeshRenderer>().material = dMaterial;
+                    }
                 }
             }
         }
@@ -290,6 +293,20 @@ public class ExploreConnection : MonoBehaviour
 
     public void RemoveActivePathing()
     {
+        var PathFindBuildings = GameObject.FindGameObjectsWithTag("Pathfind");
+        if (PathFindBuildings != null)
+        {
+            foreach (var building in PathFindBuildings)
+            {
+                var dMaterial = building.GetComponent<BuildingKey>().defaultMaterial;
+                if (dMaterial != null)
+                {
+                    building.GetComponent<MeshRenderer>().material = dMaterial;
+                }
+            }
+        }
+
+
         var activePath = GameObject.FindGameObjectWithTag("GatePathing");
         var activePrefab = GameObject.FindGameObjectWithTag("Build3dPrefab");
         if(activePath != null)

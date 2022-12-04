@@ -28,6 +28,11 @@ public class BuildingDes : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("LoadedData") != null)
         {
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().SearchedStaff = null;
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().SearchedBuilding = null;
+            GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().SearchedCollege = null;
+
+
             StartCoroutine(Spinner());
             var Buildings = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Buildings;
             var BuildingImages = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().BuildingImages;

@@ -19,6 +19,7 @@ TagManager:
   - BuildingName
   - FirstBuilding
   - Pathway
+  - SearchDescriptBox
   layers:
   - Default
   - TransparentFX
