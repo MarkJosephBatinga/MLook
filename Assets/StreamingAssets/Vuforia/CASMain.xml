@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="CASMain6" size="200.000000 132.467529" />
+    <ImageTarget name="CASMain5" size="200.000000 132.467529" />
+    <ImageTarget name="CASMain4" size="200.000000 201.398605" />
+    <ImageTarget name="CASMain3" size="200.000000 132.467529" />
+    <ImageTarget name="CASMain2" size="200.000000 132.467529" />
+    <ImageTarget name="CASMain1" size="200.000000 184.150330" />
+  </Tracking>
+</QCARConfig>

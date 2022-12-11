@@ -144,7 +144,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 12921301}
     - target: {fileID: 2089139556601102409, guid: 2fb7e29ac40b8f74ab24579da9db6767,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -428,6 +428,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 12921299}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &12921301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1512370660269030297, guid: 2fb7e29ac40b8f74ab24579da9db6767,
+    type: 3}
+  m_PrefabInstance: {fileID: 12921299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b3872fc6878cf41b7afeb1e966d76f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &31576042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,7 +1694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b3872fc6878cf41b7afeb1e966d76f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonImage: {fileID: 0}
 --- !u!1 &987229367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,6 +2182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit

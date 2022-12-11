@@ -567,6 +567,7 @@ MonoBehaviour:
   BuildingPrefab: {fileID: 728778681}
   MainImg: {fileID: 909718358}
   BuildingNameText: {fileID: 934857488}
+  DescriptionText: {fileID: 2927337330059918861}
 --- !u!114 &909718358 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2180300028687103763, guid: 8c7dbb35caf0a1c4bbdb84433ef1189c,
@@ -1302,6 +1303,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c7dbb35caf0a1c4bbdb84433ef1189c, type: 3}
+--- !u!114 &2927337330059918861 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2448872489770482629, guid: 8c7dbb35caf0a1c4bbdb84433ef1189c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2927337330059918860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8468681866196059776
 PrefabInstance:
   m_ObjectHideFlags: 0

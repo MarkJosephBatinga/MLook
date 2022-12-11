@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class SearchMapBehavior : MonoBehaviour
 {
+    [SerializeField]
+    Camera MainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,8 +86,10 @@ public class SearchMapBehavior : MonoBehaviour
                             }
                         }
                     }
+                    ChangeCameraTransform(offices.Key);
                 }
             }
+            
             DescriptBox.gameObject.SetActive(true);
         }
 
@@ -125,7 +130,8 @@ public class SearchMapBehavior : MonoBehaviour
             }
             DescriptBox.gameObject.SetActive(true);
         }
-
+        Debug.Log(CollegeKey + "b");
+        ChangeCameraTransform(CollegeKey + "b");
     }
     public void DisplayBuildingDes(string BuildingKey)
     {
@@ -164,6 +170,50 @@ public class SearchMapBehavior : MonoBehaviour
             DescriptBox.gameObject.SetActive(true);
         }
 
+
+
+        ChangeCameraTransform(BuildingKey);
+    }
+
+    public void ChangeCameraTransform(string key)
+    {
+        var FindClickable = GameObject.FindGameObjectsWithTag("SearchBuilding");
+        foreach (var building in FindClickable)
+        {
+            var SearchKey = building.GetComponent<BuildingKey>().SearchKey;
+            if(SearchKey != null && SearchKey == key)
+            {
+                var TextBox = building.transform.Find("Name");
+                if(TextBox != null)
+                {
+                    TextBox.gameObject.SetActive(true);
+                }
+                MainCamera.transform.parent = building.transform;
+                MainCamera.transform.localPosition = new Vector3(-3f, 0f, 10f);
+                MainCamera.transform.localEulerAngles = new Vector3(0f, 120f, 90f);
+
+                //Display the path from the gate
+                string Section = building.transform.parent.name;
+                string pathName = "GATE-" + building.name;
+                GetGatePath(Section, pathName);
+            }
+        }
+
+       
+    }
+
+    public void GetGatePath(string Section, string pathName)
+    {
+        //Find the Path
+        var pathway = GameObject.Find("Pathing").
+            transform.Find("Gate").
+            transform.Find(Section). //Find on the Section Object
+            transform.Find(pathName); //Find the Gameobject by Name
+
+        if (pathway == true && pathway.gameObject.activeSelf == false)
+        {
+            pathway.gameObject.SetActive(true);
+        }
     }
 
     public void RemoveDescriptBox()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingClick : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class BuildingClick : MonoBehaviour
                         {
                             if (Build3dPrefab != null)
                             {
+                                SetUi();
+                                SetDescription();
                                 var Last3dPrefab = GameObject.FindGameObjectWithTag("Build3dPrefab");
                                 if (Last3dPrefab != null)
                                 {
@@ -61,13 +64,6 @@ public class BuildingClick : MonoBehaviour
                 }
             }
         }
-
-      /*  ///// PICK UP IF USER TAPS
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-           
-        }  //// END OF TOUCH BEGAN*/
-
     } //// END UP UPDATE
 
 
@@ -118,6 +114,61 @@ public class BuildingClick : MonoBehaviour
         if (pathway == true && pathway.gameObject.activeSelf == true)
         {
             pathway.gameObject.SetActive(false);
+        }
+    }
+
+    public void SetUi()
+    {
+        var Instruction = GameObject.Find("Instruction");
+        if (Instruction != null)
+        {
+            Instruction.SetActive(false);
+        }
+
+        var FindPathBtn = GameObject.Find("FindPath");
+        var CancelBtn = GameObject.Find("ZoomBox").transform.Find("GateCancel");
+        if(CancelBtn != null && FindPathBtn != null)
+        {
+            FindPathBtn.SetActive(false);
+            CancelBtn.gameObject.SetActive(true);
+        }
+    }
+
+
+    public void SetDescription()
+    {
+        var Buildings = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().Buildings;
+        var BuildingImages = GameObject.FindGameObjectWithTag("LoadedData").GetComponent<Data>().BuildingImages;
+        var BuildingDes = GameObject.Find("SafeArea").transform.Find("BuildingDescriptBox");
+        if(BuildingDes != null)
+        {
+            var Key = this.GetComponent<BuildingKey>().SearchKey;
+            if(Key != null && Buildings != null && BuildingImages != null)
+            {
+                var Building = Buildings[Key];
+                if(Building != null)
+                {
+                    var Description = Building as Dictionary<string, object>;
+                    foreach (var des in Description)
+                    {
+                        if (des.Key == "name")
+                        {
+                            var NameText = BuildingDes.transform.Find("Name");
+                            var ImageBox = BuildingDes.transform.Find("Image");
+                            if (NameText != null && ImageBox != null)
+                            {
+                                NameText.GetComponent<TextMeshProUGUI>().text = des.Value.ToString();
+                                var ImgTexture = BuildingImages[Key];
+                                if(ImgTexture != null)
+                                {
+                                    ImageBox.GetComponent<RawImage>().texture = ImgTexture;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            BuildingDes.gameObject.SetActive(true);
         }
     }
 }

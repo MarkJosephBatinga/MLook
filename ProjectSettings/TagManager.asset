@@ -20,6 +20,7 @@ TagManager:
   - FirstBuilding
   - Pathway
   - SearchDescriptBox
+  - SearchBuilding
   layers:
   - Default
   - TransparentFX

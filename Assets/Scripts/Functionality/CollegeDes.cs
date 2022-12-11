@@ -17,7 +17,10 @@ public class CollegeDes : MonoBehaviour
     RawImage Logo;
 
     [SerializeField]
-    TextMeshProUGUI CollegeNameText;
+    TextMeshProUGUI CollegeNameText; 
+    
+    [SerializeField]
+    TextMeshProUGUI CollegeDesText;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +71,11 @@ public class CollegeDes : MonoBehaviour
             if (college.Key == "name")
             {
                 CollegeNameText.text = college.Value.ToString();
+            }
+
+            else if (college.Key == "des")
+            {
+                CollegeDesText.text = college.Value.ToString();
             }
         }
 

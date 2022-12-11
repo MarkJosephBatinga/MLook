@@ -20,6 +20,9 @@ public class BuildingDes : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI BuildingNameText;
+    
+    [SerializeField]
+    TextMeshProUGUI DescriptionText;
 
     bool isLoading = true;
 
@@ -72,6 +75,10 @@ public class BuildingDes : MonoBehaviour
             if(building.Key == "name")
             {
                 BuildingNameText.text = building.Value.ToString();
+            }
+            else if (building.Key == "purpose")
+            {
+                DescriptionText.text = building.Value.ToString();
             }
         }
 

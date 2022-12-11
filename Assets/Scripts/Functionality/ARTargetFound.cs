@@ -24,8 +24,10 @@ public class ARTargetFound : MonoBehaviour
 
     public void onCollegeFound()
     {
-        if(Key != null)
+        var InstructBox = GameObject.Find("Canvas").transform.Find("Instruct");
+        if (Key != null && InstructBox != null)
         {
+            InstructBox.gameObject.SetActive(false);
             GameObject ICollegeObject = GameObject.Instantiate(CollegePrefab);
             ICollegeObject.transform.Find("Behavior").GetComponent<CollegeArPrefab>().CollegeKey = Key;
         }
@@ -34,20 +36,28 @@ public class ARTargetFound : MonoBehaviour
 
     public void onBuildingFound()
     {
-        GameObject IBuildingObject = GameObject.Instantiate(BuildingPrefab);
+        var InstructBox = GameObject.Find("Canvas").transform.Find("Instruct");
+        if (InstructBox != null)
+        {
+            InstructBox.gameObject.SetActive(false);
+            GameObject IBuildingObject = GameObject.Instantiate(BuildingPrefab);
+        }
     }
 
     public void onLost()
     {
         /*DestroyImmediate(CollegePrefab, true);
         DestroyImmediate(BuildingPrefab, true);*/
-        if (GameObject.FindGameObjectWithTag("ARCollegePrefab") != null)
+        var InstructBox = GameObject.Find("Canvas").transform.Find("Instruct");
+        if (GameObject.FindGameObjectWithTag("ARCollegePrefab") != null && InstructBox != null)
         {
+            InstructBox.gameObject.SetActive(true);
             GameObject CollegePrefab = GameObject.FindGameObjectWithTag("ARCollegePrefab");
             Destroy(CollegePrefab);
         }
         else if (GameObject.FindGameObjectWithTag("ARBuildingPrefab") != null)
         {
+            InstructBox.gameObject.SetActive(true);
             GameObject BuildingPrefab = GameObject.FindGameObjectWithTag("ARBuildingPrefab");
             Destroy(BuildingPrefab);
         }

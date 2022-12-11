@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Canteen7" size="200.000000 150.000000" />
+    <ImageTarget name="Canteen6" size="200.000000 150.000000" />
+    <ImageTarget name="Canteen5" size="200.000000 150.000000" />
+    <ImageTarget name="Canteen4" size="200.000000 132.467529" />
+    <ImageTarget name="Canteen3" size="200.000000 132.467529" />
+    <ImageTarget name="Canteen2" size="200.000000 217.793594" />
+    <ImageTarget name="Canteen1" size="200.000000 132.467529" />
+  </Tracking>
+</QCARConfig>

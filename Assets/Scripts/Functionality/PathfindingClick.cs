@@ -13,53 +13,72 @@ public class PathfindingClick : MonoBehaviour
 
     void Update()
     {
-        ///// PICK UP IF USER TAPS
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        for (var i = 0; i < Input.touchCount; ++i)
         {
-            ////// CAST RAY TO PICK UP HITS
-            ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
-                if (hit.transform.position == transform.position)
+                if (Input.GetTouch(i).tapCount == 2)
                 {
-                    var FirstBuilding = GameObject.FindGameObjectWithTag("FirstBuilding");
-                    if(FirstBuilding != null)
-                    {
-                        var ActivePath = GameObject.FindGameObjectWithTag("Pathway");
-                        if(ActivePath == null)
-                        {
-                            FindPath(FirstBuilding.name, this.name);
-                            var SafeArea = GameObject.Find("SafeArea");
-                            var InstructionBox = SafeArea.transform.Find("Instruction");
-                            if (InstructionBox != null)
-                            {
-                                InstructionBox.gameObject.SetActive(false);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        this.transform.tag = "FirstBuilding";
-                        this.GetComponent<MeshRenderer>().material = PFMaterialChange;
-                        DisplayUndo();
+                    ////// CAST RAY TO PICK UP HITS
+                    ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 
-                        var SafeArea = GameObject.Find("SafeArea");
-                        var InstructionBox = SafeArea.transform.Find("Instruction");
-                        if (InstructionBox != null)
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                    {
+                        if (hit.transform.position == transform.position)
                         {
-                            var instructText = InstructionBox.gameObject.transform.Find("InstructionText");
-                            if (instructText != null)
+                            var FirstBuilding = GameObject.FindGameObjectWithTag("FirstBuilding");
+                            if (FirstBuilding != null)
                             {
-                                instructText.GetComponent<TextMeshProUGUI>().text = "Select the building you want to go";
+                                var ActivePath = GameObject.FindGameObjectWithTag("Pathway");
+                                if (ActivePath == null)
+                                {
+                                    FindPath(FirstBuilding.name, this.name);
+                                    var SafeArea = GameObject.Find("SafeArea");
+                                    var InstructionBox = SafeArea.transform.Find("Instruction");
+                                    if (InstructionBox != null)
+                                    {
+                                        InstructionBox.gameObject.SetActive(false);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                this.transform.tag = "FirstBuilding";
+                                this.GetComponent<MeshRenderer>().material = PFMaterialChange;
+                                DisplayUndo();
+
+                                var SafeArea = GameObject.Find("SafeArea");
+                                var InstructionBox = SafeArea.transform.Find("Instruction");
+                                if (InstructionBox != null)
+                                {
+                                    var instructText = InstructionBox.gameObject.transform.Find("InstructionText");
+                                    if (instructText != null)
+                                    {
+                                        instructText.GetComponent<TextMeshProUGUI>().text = "Double Click to select the building you want to go";
+                                    }
+                                }
                             }
                         }
-                    }
+                    } //// END OF RAYCAST
                 }
-            } //// END OF RAYCAST
-        }  //// END OF TOUCH BEGAN
+            }
+            ///// PICK UP IF USER TAPS
+            /*  if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+          {
+              ////// CAST RAY TO PICK UP HITS
+              ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 
-    } //// END UP UPDATE
+              if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+              {
+                  if (hit.transform.position == transform.position)
+                  {
+
+                  }
+              } //// END OF RAYCAST
+          }  //// END OF TOUCH BEGAN
+  */
+        } //// END UP UPDATE
+    }
 
     public void FindPath(string FirstBuilding, string SecondBuilding)
     {

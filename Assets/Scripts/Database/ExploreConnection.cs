@@ -21,7 +21,7 @@ public class ExploreConnection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       /* if (GameObject.FindGameObjectWithTag("LoadedData") != null)
+        if (GameObject.FindGameObjectWithTag("LoadedData") != null)
         {
             StartCoroutine(Spinner());
             StartCoroutine(ExploreLoad());
@@ -29,7 +29,7 @@ public class ExploreConnection : MonoBehaviour
         else
         {
             SceneManager.LoadScene("LoadingScene");
-        }*/
+        }
     }
 
     IEnumerator ExploreLoad()
@@ -55,7 +55,6 @@ public class ExploreConnection : MonoBehaviour
         HighlightBuildings();
         RemoveActivePathing();
         RemoveClickableBuildings();
-/*        UpdateCameraAngle();*/
         DisplayInstruction();
         ChangeButton();
     }
@@ -65,9 +64,59 @@ public class ExploreConnection : MonoBehaviour
         HighlightBuildings();
         RemoveClickableBuildings();
         RemoveActivePathways();
-/*        UpdateCameraAngle();*/
         DisplayInstruction();
         ChangeButton();
+    }
+
+    public void OnCancelGateFind()
+    {
+        var Instruction = GameObject.Find("SafeArea").transform.Find("Instruction");
+        if (Instruction != null)
+        {
+            Instruction.gameObject.SetActive(true);
+        }
+
+         var activePath = GameObject.FindGameObjectWithTag("GatePathing");
+        var activePrefab = GameObject.FindGameObjectWithTag("Build3dPrefab");
+        if(activePath != null)
+        {
+            activePath.SetActive(false);
+        }
+        if(activePrefab != null)
+        {
+            RemoveLastClick(activePrefab);
+        }
+
+        var FindPathBtn = GameObject.Find("ZoomBox").transform.Find("FindPath");
+        var CancelBtn = GameObject.Find("ZoomBox").transform.Find("GateCancel");
+        if (CancelBtn != null && FindPathBtn != null)
+        {
+            FindPathBtn.gameObject.SetActive(true);
+            CancelBtn.gameObject.SetActive(false);
+        }
+
+        var DesBox = GameObject.Find("SafeArea").transform.Find("BuildingDescriptBox");
+        if(DesBox != null)
+        {
+            DesBox.gameObject.SetActive(false);
+        }
+    }
+
+    public void RemoveLastClick(GameObject Last3dPrefab)
+    {
+        var buildingName = Last3dPrefab.transform.Find("BuildName").GetComponent<TextMeshPro>().text;
+        var lastBuilding = GameObject.Find(buildingName);
+        if (lastBuilding != null)
+        {
+            var lastMaterial = lastBuilding.GetComponent<BuildingKey>().defaultMaterial;
+            if (lastMaterial != null)
+            {
+                lastBuilding.GetComponent<MeshRenderer>().material = lastMaterial;
+            }
+
+        }
+
+        GameObject.Destroy(Last3dPrefab);
     }
 
     public void OnUndoClick()
@@ -84,7 +133,7 @@ public class ExploreConnection : MonoBehaviour
         {
             if (InstructionBox != null && InstructionText != null)
             {
-                InstructionText.gameObject.GetComponent<TextMeshProUGUI>().text = "Select the building you want to go";
+                InstructionText.gameObject.GetComponent<TextMeshProUGUI>().text = "Double Click to select the building you want to go";
                 InstructionBox.gameObject.SetActive(true);
             }
             activePath.SetActive(false);
@@ -96,7 +145,7 @@ public class ExploreConnection : MonoBehaviour
             {
                 if (InstructionBox != null && InstructionText != null)
                 {
-                    InstructionText.gameObject.GetComponent<TextMeshProUGUI>().text = "Select your building location";
+                    InstructionText.gameObject.GetComponent<TextMeshProUGUI>().text = "Double click to select your building location";
                     InstructionBox.gameObject.SetActive(true);
                 }
                 FirstBuilding.GetComponent<MeshRenderer>().material = defaultColor;
@@ -113,7 +162,7 @@ public class ExploreConnection : MonoBehaviour
         var FindPathBtn = GameObject.Find("ZoomBox").transform.Find("FindPath");
         var CancelBtn = GameObject.Find("ZoomBox").transform.Find("Cancel");
 
-        if (FindPathBtn == true && CancelBtn == true && ClickableBuildings != null && ClickableBuildings != null)
+        if (FindPathBtn == true && CancelBtn == true && ClickableBuildings != null && NonClickableBuildings != null)
         {
             if (FindPathBtn.gameObject.activeSelf == true)
             {
@@ -212,32 +261,6 @@ public class ExploreConnection : MonoBehaviour
         }
     }
 
-/*    public void UpdateCameraAngle()
-    {
-        var FindPathBtn = GameObject.Find("ZoomBox").transform.Find("FindPath");
-        var CancelBtn = GameObject.Find("ZoomBox").transform.Find("Cancel");
-        var MainCamera = GameObject.Find("Main Camera");
-
-        if (FindPathBtn == true && CancelBtn == true && MainCamera != null)
-        {
-            if (FindPathBtn.gameObject.activeSelf == true)
-            {
-                MainCamera.transform.position = new Vector3(120f, 300f, 180f);
-                MainCamera.transform.eulerAngles = new Vector3(70f, 90f, 0);
-                MainCamera.GetComponent<Camera>().fieldOfView = 100;
-                MainCamera.GetComponent<CameraNavigation>().maxPosY = 500f;
-            }
-            else
-            {
-                MainCamera.transform.position = new Vector3(-315f, 300f, 260f);
-                MainCamera.transform.eulerAngles = new Vector3(50f, 90f, 0);
-                MainCamera.GetComponent<Camera>().fieldOfView = 50;
-                MainCamera.GetComponent<CameraNavigation>().maxPosY = 300f;
-            }
-
-        }
-    }*/
-
     public void DisplayInstruction()
     {
         var FindPathBtn = GameObject.Find("ZoomBox").transform.Find("FindPath");
@@ -253,7 +276,7 @@ public class ExploreConnection : MonoBehaviour
                 if (InstructionBox != null && InstructionText != null)
                 {
 
-                    InstructionText.gameObject.GetComponent<TextMeshProUGUI>().text = "Select your building location";
+                    InstructionText.gameObject.GetComponent<TextMeshProUGUI>().text = "Double Click to select your building location";
                     InstructionBox.gameObject.SetActive(true);
                 }
             }
@@ -262,10 +285,12 @@ public class ExploreConnection : MonoBehaviour
                 var UndoBtn = SafeArea.transform.Find("ZoomBox").transform.Find("Undo");
 
                 var InstructionBox = SafeArea.transform.Find("Instruction");
-                if (InstructionBox != null && UndoBtn != null)
+                var InstructionText = InstructionBox.transform.Find("InstructionText");
+                if (InstructionBox != null && UndoBtn != null && InstructionText != null)
                 {
-                    UndoBtn.gameObject.SetActive(false);
+                    InstructionText.gameObject.GetComponent<TextMeshProUGUI>().text = "Tap (Double Click) the building you want to go ";
                     InstructionBox.gameObject.SetActive(false);
+                    UndoBtn.gameObject.SetActive(false);
                 }
             }
 

@@ -9,6 +9,8 @@ public class BuildingKey : MonoBehaviour
 
     public string Section;
 
+    public string SearchKey;
+
     // Start is called before the first frame update
     void Start()
     {
